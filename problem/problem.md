@@ -5,6 +5,8 @@ Problem Breakdown
 
 ### Language & Technology
 
+_Could split the team front end and backend_
+
 Heavy user interface
 - What framework best for the UI we want
 
@@ -13,16 +15,23 @@ Back end data (and DBs)
 - What are the main back end tasks to be used, what frameworks work best
 
 
-Python (good for web scraping)
+#### Python
+
+- (Good for web scraping)
 - Django - like Rails
-- Flask - like Sinatra
+- [Flask](http://flask.pocoo.org/) - micro framework like Sinatra for Python
 
-Could split the team front end and backend
 
-Spark - micro framework like Sinatra for Kotlin
+#### Kotlin
 
-Elixir -> functional programming language
- - Phoenix -> framework like Rails
+- [Spark](http://sparkjava.com/) - micro framework like Sinatra for Kotlin
+- Straightforward tutorials for [setting up an api in Spark](http://sparkjava.com/tutorials/kotlin)
+
+
+#### Elixir
+
+- functional programming language
+- [Phoenix](https://phoenixframework.org/) -> web framework like Rails for building APIs
 
 ------
 
