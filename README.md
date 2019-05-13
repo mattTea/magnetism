@@ -1,4 +1,4 @@
 Magnetism Neto Learning
 =======================
 
-README foe the final engineering project
+README for the final engineering project
