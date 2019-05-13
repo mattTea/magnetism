@@ -39,42 +39,42 @@ e.g. kinematics: raw links from google compiled using search query  step 1: "beg
 
 ### Tying this into our users stories:
 
-`
+```
 As an undecided self-directed learner
 So that I can learn something new
 I can select a topic
-`
+```
 
 `topics.all()`
 
-`
+```
 As a decided self-directed learner
 So that I can direct my own learning
 I can see a list of all the subtopics I need to learn
-`
+```
 
 `steps.find(topic_id)`
 
-`
+```
 As a committed self-directed learner
 So that I can learn
 I am directed to a resource relating to the step I am completing
-`
+```
 
 `resources.find(step_id)`
 
-`
+```
 As an engaged self-directed learner
 So that I can refine my learning path
 I want to provide feedback on a resource
-`
+```
 
 `feedback.create(resource_id, score, feedback)`
 
-`
+```
 As a successful self-directed learner
 So that I can understand how I have grown
 I want to see a record of all the resources that have helped me along the way
-`
+```
 
-feedback.find(user_id)
+`feedback.find(user_id)`
