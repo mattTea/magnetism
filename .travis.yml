@@ -8,6 +8,8 @@ install:
 env:
   - FLASK_ENV=development
 before_script:
-  - python3 run.py
+  - nohup python3 run.py >/dev/null &
 script:
   - pytest
+after_script:
+  - pkill python3
