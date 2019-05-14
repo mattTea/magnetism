@@ -12,9 +12,7 @@ install:
   - pip install pipenv
   - pipenv install
 env:
-  - FLASK_ENV=development
-  - APP_SETTINGS="config.Development"
-  - DATABASE_URL="postgresql://localhost/magnetism"
+  - APP_SETTINGS="config.Development" DATABASE_URL="postgresql://localhost/magnetism"
 before_script:
   - nohup python3 run.py >/dev/null &
   - psql -c 'create database magnetism;' -U postgres
