@@ -280,3 +280,25 @@ Can't find symbol 'GetGraphicsResetStatus'.
 1557829631403	Marionette	INFO	Stopped listening on port 65481
 1557829633863	Marionette	INFO	Stopped listening on port 65421
 1557829636220	Marionette	INFO	Stopped listening on port 65372
+1557832124262	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/yl/0jbssmhd06s7mq8sl8r2x44r0000gq/T/rust_mozprofile.UwKK9qR90AT2"
+*** You are running in headless mode.
+1557832124926	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1557832124927	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1557832126986	Marionette	INFO	Listening on port 49601
+1557832127011	Marionette	WARN	TLS certificate errors will be ignored for this session
+1557832142158	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/yl/0jbssmhd06s7mq8sl8r2x44r0000gq/T/rust_mozprofile.p3MYBemKOCLU"
+*** You are running in headless mode.
+1557832142669	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1557832142669	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1557832144660	Marionette	INFO	Listening on port 49650
+1557832144705	Marionette	WARN	TLS certificate errors will be ignored for this session
+1557832144974	Marionette	INFO	Stopped listening on port 49650
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.
+1557832204788	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/yl/0jbssmhd06s7mq8sl8r2x44r0000gq/T/rust_mozprofile.l5BEGEuOtFxk"
+*** You are running in headless mode.
+1557832205318	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1557832205319	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1557832207328	Marionette	INFO	Listening on port 49694
+1557832207355	Marionette	WARN	TLS certificate errors will be ignored for this session
+1557832207629	Marionette	INFO	Stopped listening on port 49694
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.

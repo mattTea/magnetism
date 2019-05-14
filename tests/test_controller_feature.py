@@ -1,7 +1,7 @@
 # import flask
 
 from splinter import Browser
-browser = Browser('firefox')
+browser = Browser('firefox', headless="true")
 
 # def test_topics():
 
