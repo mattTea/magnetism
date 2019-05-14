@@ -19,19 +19,27 @@ Install commands
 
 6. `pipenv install pytest` <- in virtual env
 
-7. `pip install capybara-py`
+7. Other potential installs:
 
 (sqlalchemy)
 (flask sqlalchemy)
 (flask-migrate)
 (flask-bcrypt)
 
+## Before running application or tests
+
+1. `pipenv --three` - sets up virtual environment - if you haven't done this previously
+
+2. `pipenv shell` - takes you into the virtual environment
+
+
+## To run application
+
+3. `export FLASK_ENV=development` (this needs to be part of the setup, perhaps as a script)
+
+4. `python3 run.py`
 
 ## To run tests
-
-1. `pipenv --three`
-
-2. `pipenv shell`
 
 3. (May need to do a `pipenv install pytest` in virtual env)
 

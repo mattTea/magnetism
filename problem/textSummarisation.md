@@ -22,3 +22,9 @@ My search for "natural language processing Kotlin" brought me to a reddit commen
 Java: This appears to be written in Java and has been extended to other languages
 
 **[Stanford NLP](https://nlp.stanford.edu/software/)**
+
+### Notes
+Question - could we use the extraction summarisation algorithm to help us?
+    - E.g. for the top 5 results for a search, what are the most found words and therefore might be something to have in our topics?
+
+Flask for Python
