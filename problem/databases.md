@@ -1,7 +1,7 @@
 ### Users
  **id** | **username** | **email**  | **password** | **password encrypted**
 --|---|---|---|--
-  |   |   |   |
+ 1 | saypop  | sp@pm.com | 123456 | £@$@%$£
 
 
 ### Topics
@@ -16,25 +16,27 @@ Topics and users have many to many relationship.
 ### Steps
  **id** | **user_id** | **topic_id**
 --|---|--
-
+ 1 | 1 | 1
+ 
 ### Steps are steps to learning topics
 **id** | **topic_id** | **step_name**
 --|---|--
-  |   |
+ 1 | 1 | Mechanics
 
 e.g. Physics: kinematics, mechanics, fundamentals, motion, etc.
 
 ### Resources needed to understand each step
- **id** | **map_id** | **url** | **rank**
+ **id** | **step_id** | **url** | **rank**
 --|---|---|---
-  |   |   |
+ 1 | 1 | khanacademy.com/mechanics | 1
+ 2 | 1 | berkley.com/mechanics | 2
 
 e.g. kinematics: raw links from google compiled using search query  step 1: "beginner courses in kinematics" step 2: "intermediate courses in kinematics" step 3: "advanced courses in kinematics"
 
 ### Feedback qualifies resources
   **id** | **user_id** | **resource_id** | **score** | **feedback**
 --|---|---|---|---
-  |   |   |   |
+ 1 | 1 | 1 | +1 | I get it now
 
 
 ### Tying this into our users stories:
