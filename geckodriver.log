@@ -310,3 +310,25 @@ console.error: BroadcastService:
   Stack:
     remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
 
+1557845705474	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/43/95btryn1317fnkw34hp5b_sm0000gn/T/rust_mozprofile.bPqyQ65phJfO"
+*** You are running in headless mode.
+*** You are running in headless mode.
+1557845713124	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1557845713125	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1557845713125	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1557845716187	Marionette	INFO	Listening on port 56159
+1557845804730	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/43/95btryn1317fnkw34hp5b_sm0000gn/T/rust_mozprofile.r5Kwbo02x03b"
+*** You are running in headless mode.
+1557845805567	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1557845805567	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1557845805568	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1557845808529	Marionette	INFO	Listening on port 56245
+1557845808620	Marionette	WARN	TLS certificate errors will be ignored for this session
+1557845904492	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/43/95btryn1317fnkw34hp5b_sm0000gn/T/rust_mozprofile.28beE2aRpO9I"
+*** You are running in headless mode.
+1557845905419	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1557845905419	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1557845905420	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1557845907941	Marionette	INFO	Listening on port 56318
+1557845907989	Marionette	WARN	TLS certificate errors will be ignored for this session
+1557845908489	Marionette	INFO	Stopped listening on port 56318
