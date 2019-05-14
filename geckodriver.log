@@ -302,3 +302,11 @@ JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection
 1557832207355	Marionette	WARN	TLS certificate errors will be ignored for this session
 1557832207629	Marionette	INFO	Stopped listening on port 49694
 JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
