@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 flask = "*"
 pytest = "*"
+splinter = "*"
+pytest-splinter = "*"
 
 [requires]
 python_version = "3.7"

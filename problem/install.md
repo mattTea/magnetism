@@ -3,6 +3,8 @@ Install commands
 
 [Tutorial link](https://www.codementor.io/olawalealadeusi896/restful-api-with-python-flask-framework-and-postgres-db-part-1-kbrwbygx5)
 
+## In creating the project, we did this
+
 1. $ `python --version`
 => Python 2.7.10
 
@@ -15,9 +17,13 @@ Install commands
 
 4. In root folder, run `pipenv --three` to create virtual python environment
 
+5. `pipenv shell` - takes you into the virtual environment
+
 5. `pipenv install flask`
 
 6. `pipenv install pytest` <- in virtual env
+
+7. `pipenv install splinter`
 
 7. Other potential installs:
 
@@ -28,9 +34,13 @@ Install commands
 
 ## Before running application or tests
 
-1. `pipenv --three` - sets up virtual environment - if you haven't done this previously
+1. `brew install pipenv` - install pipenv to then manage the other installs
 
-2. `pipenv shell` - takes you into the virtual environment
+2. `pipenv --three` - sets up virtual environment - if you haven't done this previously
+
+3. `pipenv shell` - takes you into the virtual environment
+
+4. `pipenv install` - will install all dependencies from the pipfile
 
 
 ## To run application
@@ -44,3 +54,5 @@ Install commands
 3. (May need to do a `pipenv install pytest` in virtual env)
 
 4. `pytest`
+
+[Matchers in python3](https://buildmedia.readthedocs.org/media/pdf/splinter/latest/splinter.pdf)

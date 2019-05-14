@@ -19,8 +19,10 @@ def create_app(env_name):
     """
     return 'Congratulations, your first endpoint is working.'
 
-  @app.route('/sam', methods=['GET'])
-  def sam():
-    return 'Hi Sam!'
+  @app.route('/topics', methods=['GET'])
+  def topics():
+    return 'Physics'
+    # This would invoke the model
+    # And then call a view to convert to JSON
 
   return app
