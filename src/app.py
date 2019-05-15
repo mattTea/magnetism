@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
-from config import app_config
+from src.config import app_config
 
 # app initialisation
 app = Flask(__name__)
