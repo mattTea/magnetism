@@ -16,7 +16,7 @@ matrix:
       env:
         - APP_SETTINGS="development" DATABASE_URL="postgresql://localhost/magnetism"
       before_script:
-        - nohup python3 src/app.py >/dev/null &
+        - nohup python3 app.py >/dev/null &
         - psql -c 'create database magnetism;' -U postgres
         - ./travis_db_setup.sh
       script:
