@@ -11,26 +11,15 @@ README for the final engineering project
 - Pytest for unit tests for python
 - Splinter for feature tests for python
 
-## Before running application or tests
+- REACT for the frontend
 
-1. `brew install pipenv` - install pipenv to then manage the other installs
+## To install the project locally
 
-2. `pipenv --three` - sets up virtual environment - if you haven't done this previously
+1. Run `./build/buildVM.sh` to build and enter a virtual environment
 
-3. `pipenv shell` - takes you into the virtual environment
+2. Once in the virtual environment, run `./build/buildEnv.sh` to setup the environment
 
-4. `pipenv install` - will install all dependencies from the pipfile
-
-5. Run these commands to setup environment variables (this needs to be part of the setup, perhaps as a script)
-  - `export APP_SETTINGS="config.Development"`
-  - `export DATABASE_URL="postgresql://localhost/magnetism"`
-
-6. Create the database `psql -c 'create database magnetism;'`
-
-7. Run the database migration scripts:
-  - python src/manage.py db init;
-  - python src/manage.py db migrate;
-  - python src/manage.py db upgrade;
+3. If you already have the virtual environment setup from a previous install, you can enter the VM by typing `pipenv shell` and then you can run the `./build/buildEnv.sh` script again if needed
 
 ## To run application
 
@@ -38,18 +27,16 @@ If you are not already in a shell, you will need to do the following:
 
 1. `pipenv shell` - takes you into the virtual environment
 
-2. Run these commands to setup environment variables (this needs to be part of the setup, perhaps as a script)
-  - `export APP_SETTINGS="config.Development"`
-  - `export DATABASE_URL="postgresql://localhost/magnetism"`
+2. Consider running `./build/buildEnv.sh` to ensure that your VM is setup correctly
 
-To run the appliation:
+To run the (backend) appliation:
 
 1. `python3 src/app.py`
 
-## To run tests
+## To run the python tests (backend API)
 
-1. (May need to do a `pipenv install pytest` in virtual env)
+Again, you need to be in a shell to do this:
 
-2. Start the application if you want the splinter tests to work!
+1. Start the application if you want the splinter tests to work!
 
-3. `pytest`- will run pytest and splinter tests
+2. `pytest`- will run pytest and splinter tests
