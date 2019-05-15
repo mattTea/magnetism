@@ -5,7 +5,7 @@ import './App.css';
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 
-function App() {
+function CardTemplate(title) {
   return(
     <Card>
       <Image src='https://timedotcom.files.wordpress.com/2017/10/229-westerlund-21.jpg?w=1520&quality=85&h=1139' wrapped ui={false} />
@@ -27,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default CardTemplate;
