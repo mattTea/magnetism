@@ -4,23 +4,23 @@ matrix:
       python:
         - "3.7"
       dist: xenial
+      services:
+       - postgresql
       before_install:
-        # - sudo apt-get install xvfb
         - wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
         - sudo tar -xzf geckodriver-v0.24.0-linux64.tar.gz -C /usr/bin
         - sudo chmod a+x /usr/bin/geckodriver
-        # - export DISPLAY=:99.0
-        # - sh -e /etc/init.d/xvfb start
-        # - sleep 5 # give xvfb some time to start
       install:
         - pip install pipenv
         - pipenv install
       env:
-        - FLASK_ENV=development
+        - APP_SETTINGS="config.Development" DATABASE_URL="postgresql://localhost/magnetism"
       before_script:
-        - nohup python3 run.py >/dev/null &
+        - nohup python3 src/app.py >/dev/null &
+        - psql -c 'create database magnetism;' -U postgres
+        - ./travis_db_setup.sh
       script:
-        - pytest
+        - pytest -r A
       after_script:
         - pkill python3
 
