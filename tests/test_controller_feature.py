@@ -5,6 +5,7 @@ browser = Browser('firefox', headless="true")
 
 # def test_topics():
 
+browser.visit('http://localhost:5000/topics/add')
 browser.visit('http://localhost:5000/topics')
 
 assert browser.is_text_present('Physics')

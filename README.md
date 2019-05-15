@@ -1,6 +1,8 @@
 Magnetism Neto Learning
 =======================
 
+[![Build Status](https://travis-ci.com/mattTea/magnetism.svg?branch=master)](https://travis-ci.com/mattTea/magnetism)
+
 README for the final engineering project
 
 # In this project

@@ -10,6 +10,10 @@ flask = "*"
 pytest = "*"
 splinter = "*"
 pytest-splinter = "*"
+flask-sqlalchemy = "*"
+flask-script = "*"
+flask-migrate = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
