@@ -23,21 +23,21 @@ __pycache__
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+/front_endnpm-debug.log*
+/front_endyarn-debug.log*
+/front_endyarn-error.log*
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+/front_end/node_modules
+/front_end/.pnp
+/front_end.pnp.js
 
 # testing
-/coverage
+/front_end/coverage
 
 # production
-/build
+/front_end/build
 
 # misc
 .DS_Store
