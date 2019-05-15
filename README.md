@@ -11,8 +11,6 @@ README for the final engineering project
 - Pytest for unit tests for python
 - Splinter for feature tests for python
 
-
-
 ## Before running application or tests
 
 1. `brew install pipenv` - install pipenv to then manage the other installs
@@ -24,7 +22,6 @@ README for the final engineering project
 4. `pipenv install` - will install all dependencies from the pipfile
 
 5. Run these commands to setup environment variables (this needs to be part of the setup, perhaps as a script)
-  - `export FLASK_ENV=development`
   - `export APP_SETTINGS="config.Development"`
   - `export DATABASE_URL="postgresql://localhost/magnetism"`
 
@@ -36,6 +33,16 @@ README for the final engineering project
   - python src/manage.py db upgrade;
 
 ## To run application
+
+If you are not already in a shell, you will need to do the following:
+
+1. `pipenv shell` - takes you into the virtual environment
+
+2. Run these commands to setup environment variables (this needs to be part of the setup, perhaps as a script)
+  - `export APP_SETTINGS="config.Development"`
+  - `export DATABASE_URL="postgresql://localhost/magnetism"`
+
+To run the appliation:
 
 1. `python3 src/app.py`
 
