@@ -1,15 +1,11 @@
-# import flask
-
 from splinter import Browser
-browser = Browser('firefox', headless="true")
 
-# def test_topics():
+def test_topics():
 
-browser.visit('http://localhost:5000/topics/add')
-browser.visit('http://localhost:5000/topics')
+    browser = Browser('firefox', headless="true")
 
-assert browser.is_text_present('Physics')
-# assert browser.is_text_present('URL')
+    browser.visit('http://localhost:5000/topics/add')
+    browser.visit('http://localhost:5000/topics')
+    assert browser.is_text_present('Physics')
 
-
-browser.quit()
+    browser.quit()
