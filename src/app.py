@@ -37,7 +37,9 @@ def add_topic():
 def topics():
   try:
       topics=Topic.query.all()
-      return jsonify([e.serialize() for e in topics])
+      response = jsonify([e.serialize() for e in topics])
+      response.headers.add('Access-Control-Allow-Origin', '*')
+      return response
   except Exception as e:
       return(str(e))
 
