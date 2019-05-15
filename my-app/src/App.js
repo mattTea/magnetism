@@ -1,3 +1,4 @@
+import Blank from './';
 import React from 'react';
 import logo from './logo.svg';
 import 'semantic-ui-css/semantic.min.css';
