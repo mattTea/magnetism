@@ -26,6 +26,8 @@ matrix:
 
     - language: node_js
           node_js: "12.1.0"
+          before_script:
+            - cd front_end
           cache:
            directories:
              - node_modules
