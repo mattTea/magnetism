@@ -23,17 +23,26 @@ README for the final engineering project
 
 4. `pipenv install` - will install all dependencies from the pipfile
 
+5. Run these commands to setup environment variables (this needs to be part of the setup, perhaps as a script)
+  - `export FLASK_ENV=development`
+  - `export APP_SETTINGS="config.Development"`
+  - `export DATABASE_URL="postgresql://localhost/magnetism"`
+
+6. Create the database `psql -c 'create database magnetism;'`
+
+7. Run the database migration scripts:
+  - python src/manage.py db init;
+  - python src/manage.py db migrate;
+  - python src/manage.py db upgrade;
 
 ## To run application
 
-3. `export FLASK_ENV=development` (this needs to be part of the setup, perhaps as a script)
-
-4. `python3 run.py`
+1. `python3 src/app.py`
 
 ## To run tests
 
-3. (May need to do a `pipenv install pytest` in virtual env)
+1. (May need to do a `pipenv install pytest` in virtual env)
 
-4. Start the application if you want the splinter tests to work!
+2. Start the application if you want the splinter tests to work!
 
-4. `pytest`- will run pytest and splinter tests
+3. `pytest`- will run pytest and splinter tests
