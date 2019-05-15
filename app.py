@@ -7,7 +7,6 @@ from src.config import app_config
 # app initialisation
 app = Flask(__name__)
 
-# print(app.config.from_object("Hi"))
 app.config.from_object(app_config[os.environ['APP_SETTINGS']])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
