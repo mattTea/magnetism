@@ -3,9 +3,18 @@ Magnetism Neto Learning
 
 [![Build Status](https://travis-ci.com/mattTea/magnetism.svg?branch=master)](https://travis-ci.com/mattTea/magnetism)
 
-README for the final engineering project
+# About the project
 
-# In this project
+For our final project, Team Magnetism have built a learning application. The idea is that anyone who wants to learn something new can have access to suggested learning paths/knowledge nuggets with "rated" resources. The more people that use the service, the more accurate and useful the ratings will become.
+
+Our current functionality includes:
+
+1. The ability to pick a topic (MVP - work in progress)
+2. The ability to see sub-topics/learning paths/knowledge nuggets for that topic (MVP - work in progress)
+3. The ability to see learning resources for sub-topics/learning paths/knowledge nuggets (MVP - work in progress)
+4. The ability to give a rating to the resource (MVP - work in progress)
+
+## In this project
 
 - Python for the backend API
 - Pytest for unit tests for python
@@ -13,7 +22,7 @@ README for the final engineering project
 
 - REACT for the frontend
 
-## To install the project locally
+### To install the project locally
 
 1. Run `./build/buildVM.sh` to build and enter a virtual environment
 
@@ -21,7 +30,7 @@ README for the final engineering project
 
 3. If you already have the virtual environment setup from a previous install, you can enter the VM by typing `pipenv shell` and then you can run the `./build/buildEnv.sh` script again if needed
 
-## To run application
+### To run application
 
 If you are not already in a shell, you will need to do the following:
 
@@ -33,10 +42,16 @@ To run the (backend) appliation:
 
 1. `python3 src/app.py`
 
-## To run the python tests (backend API)
+### To run the python tests (backend API)
 
 Again, you need to be in a shell to do this:
 
 1. Start the application if you want the splinter tests to work!
 
 2. `pytest`- will run pytest and splinter tests
+
+# Future functionality
+
+In the future we would also like to build:
+
+- The ability for "collaborators" to sign-up and add content for others to use

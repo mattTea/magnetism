@@ -585,3 +585,11 @@ console.error: BroadcastService:
 1557917594635	Marionette	WARN	TLS certificate errors will be ignored for this session
 1557917595300	Marionette	INFO	Stopped listening on port 55091
 JavaScript error: resource://devtools-client-shared/components/reps/reps.js, line 6161: TypeError: __webpack_require__(...) is undefined
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
