@@ -33,3 +33,4 @@ matrix:
           - node_modules
       script:
           - npm test
+          - npm build
