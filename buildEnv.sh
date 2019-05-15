@@ -1,6 +1,6 @@
 pipenv install
 
-export APP_SETTINGS="config.Development"
+export APP_SETTINGS="development"
 export DATABASE_URL="postgresql://localhost/magnetism"
 
 psql -c 'create database magnetism;'
