@@ -72,11 +72,7 @@ Again, you need to be in a shell to do this:
 
 ### To run the python linter (backend API)
 
-Again, you need to be in a shell to do this:
-
-1. `pip install pylint` if not already installed
-
-2. `pylint [FILENAME]` e.g. `pylint app.py`- will run the linter
+1. `pylint [FILENAME]` e.g. `pylint app.py`- will run the linter
 
 ### To run the javascript tests
 
