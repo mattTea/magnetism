@@ -78,6 +78,8 @@ Again, you need to be in a shell to do this:
 
 2. `pytest`- will run pytest and splinter tests
 
+3.  `pytest --cov-report term-missing --cov` use this command to generate a coverage report. If required, it's possible to modify the .coveragerc file in order to specify particular files/folders that you want to scan/omit.  
+
 ### To run the python linter (backend API)
 
 1. `pylint [FILENAME]` e.g. `pylint app.py`- will run the linter
