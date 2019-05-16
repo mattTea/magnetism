@@ -7,7 +7,7 @@ import values from './sample.json'
 
 var response = values
 
-fetch('http://localhost:5000/topics')
+fetch('/topics')
    .then((response) => response.json())
    .then(function(response) {
      console.log(response);

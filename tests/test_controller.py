@@ -1,5 +1,5 @@
 import flask
-# from src.app import create_app
+# from api.app import create_app
 # import capybara
 
 # capybara.app = create_app

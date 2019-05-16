@@ -5,26 +5,26 @@ This script is api router it:
 """
 
 import os
-from flask import Flask, jsonify
-from src.config import app_config
+from flask import Flask, jsonify, render_template
+from api.config import app_config
 
 from flask_sqlalchemy import SQLAlchemy
 
 # app initialisation
-app = Flask(__name__)
+app = Flask(__name__, static_folder="build/static", template_folder="build")
 
 app.config.from_object(app_config[os.environ['APP_SETTINGS']])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-from src.models import *
+from api.models import *
 
 @app.route('/', methods=['GET'])
 def index():
     """
     example endpoint
     """
-    return 'Congratulations, your first endpoint is working.'
+    return render_template('index.html')
 
 @app.route("/topics/add")
 def add_topic():
