@@ -38,9 +38,9 @@ If you are not already in a shell, you will need to do the following:
 
 2. Consider running `./build/buildEnv.sh` to ensure that your VM is setup correctly
 
-To run the (backend) appliation:
+To run the (backend) application:
 
-1. `python3 src/app.py`
+1. `python3 app.py`
 
 ### To run the python tests (backend API)
 
