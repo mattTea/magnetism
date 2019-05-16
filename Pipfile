@@ -16,6 +16,7 @@ flask-migrate = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
 pylint = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.7"
