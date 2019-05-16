@@ -62,6 +62,14 @@ If you're using yarn, use the following command instead:
 ```
 yarn
 ```
+3. Launch the application:
+```
+npm start
+```
+If you're using yarn:
+```
+yarn start
+```
 ### To run the python tests (backend API)
 
 Again, you need to be in a shell to do this:
