@@ -1,0 +1,7 @@
+[run]
+source=
+    app
+    src/
+
+omit=
+    src/manage.py
