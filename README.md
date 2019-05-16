@@ -32,6 +32,8 @@ Our current functionality includes:
 
 ### To run application
 
+#### Back-end
+
 If you are not already in a shell, you will need to do the following:
 
 1. `pipenv shell` - takes you into the virtual environment
@@ -42,6 +44,24 @@ To run the (backend) application:
 
 1. `python3 app.py`
 
+#### Front-end
+
+1. Switch to the front_end directory:
+
+```
+cd front_end
+```
+2. Install node modules, specified in the package.json:
+
+```
+npm install
+```
+
+If you're using yarn, use the following command instead:
+
+```
+yarn
+```
 ### To run the python tests (backend API)
 
 Again, you need to be in a shell to do this:
@@ -57,6 +77,11 @@ Again, you need to be in a shell to do this:
 1. `pip install pylint` if not already installed
 
 2. `pylint [FILENAME]` e.g. `pylint app.py`- will run the linter
+
+### To run the javascript tests
+
+1. Switch to front_end directory: `cd front_end`
+2. Run tests `npm run test` or `yarn test` if you're using yarn
 
 # Future functionality
 
