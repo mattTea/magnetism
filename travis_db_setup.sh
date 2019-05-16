@@ -1,3 +1,3 @@
-python3 src/manage.py db init;
-python3 src/manage.py db migrate;
-python3 src/manage.py db upgrade;
+python3 api/manage.py db init;
+python3 api/manage.py db migrate;
+python3 api/manage.py db upgrade;
