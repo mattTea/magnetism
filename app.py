@@ -1,7 +1,7 @@
 """
 This script is api router it:
    - responds to GET requests for data from the front end with JSON data packets
-   - recieves POST requests from the front end which invokes methods in the model
+   - receives POST requests from the front end which invokes methods in the model
 """
 
 import os
@@ -16,6 +16,7 @@ app = Flask(__name__)
 app.config.from_object(app_config[os.environ['APP_SETTINGS']])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
 from src.models import *
 
 @app.route('/', methods=['GET'])
