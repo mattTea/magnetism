@@ -1,11 +1,11 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 from api.config import app_config
 
 # app initialisation
-app = Flask(__name__)
+app = Flask(__name__, static_folder="build/static", template_folder="build")
 
 app.config.from_object(app_config[os.environ['APP_SETTINGS']])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -18,7 +18,7 @@ def index():
   """
   example endpoint
   """
-  return 'Congratulations, your first endpoint is working.'
+  return render_template('index.html')
 
 @app.route("/topics/add")
 def add_topic():
