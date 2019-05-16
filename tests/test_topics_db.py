@@ -11,10 +11,3 @@ def test_topics_db(capsys):
   topics = Topic.query.all()
 
   assert topics[-1].name == "Mathematics"
-
-
-
-    # # setup database
-    # insert an entry or entries with fields
-    # make a request on db
-    # check return value against expected value
