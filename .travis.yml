@@ -20,7 +20,7 @@ matrix:
         - psql -c 'create database magnetism;' -U postgres
         - ./travis_db_setup.sh
       script:
-        - pytest
+        - pytest -r A
       after_script:
         - pkill python3
 
