@@ -6,7 +6,7 @@ This script is api router it:
 
 import os
 from flask import Flask, jsonify, render_template
-from src.config import app_config
+from api.config import app_config
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -17,7 +17,7 @@ app.config.from_object(app_config[os.environ['APP_SETTINGS']])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-from src.models import *
+from api.models import *
 
 @app.route('/', methods=['GET'])
 def index():

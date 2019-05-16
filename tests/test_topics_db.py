@@ -1,5 +1,5 @@
 from app import db
-from src.models import *
+from api.models import *
 
 def test_topics_db(capsys):
   mathematics=Topic(
