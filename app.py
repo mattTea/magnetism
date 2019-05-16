@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
-from src.config import app_config
+from api.config import app_config
 
 # app initialisation
 app = Flask(__name__)
@@ -11,7 +11,7 @@ app.config.from_object(app_config[os.environ['APP_SETTINGS']])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-from src.models import *
+from api.models import *
 
 @app.route('/', methods=['GET'])
 def index():
