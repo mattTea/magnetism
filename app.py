@@ -16,6 +16,7 @@ app = Flask(__name__)
 app.config.from_object(app_config[os.environ['APP_SETTINGS']])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
 from src.models import *
 
 @app.route('/', methods=['GET'])
