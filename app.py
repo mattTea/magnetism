@@ -1,7 +1,7 @@
 """
 This script is api router it:
    - responds to GET requests for data from the front end with JSON data packets
-   - receives POST requests from the front end which invokes methods in the model
+   - recieves POST requests from the front end which invokes methods in the model
 """
 
 import os
