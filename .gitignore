@@ -8,13 +8,13 @@ node_modules
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/front_end/node_modules
-/front_end/.pnp
-/front_end.pnp.js
+/src/node_modules
+/src/.pnp
+/src.pnp.js
 
 # testing
 /coverage
-/front_end/coverage
+/src/coverage
 
 # misc
 .env.local
@@ -22,9 +22,9 @@ node_modules
 .env.test.local
 .env.production.local
 
-/front_end/npm-debug.log*
-/front_end/yarn-debug.log*
-/front_end/yarn-error.log*
+/src/npm-debug.log*
+/src/yarn-debug.log*
+/src/yarn-error.log*
 
 # production
-/front_end/build
+/src/build

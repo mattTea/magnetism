@@ -13,6 +13,6 @@ test('renders without crashing', () => {
 
 test('ProtoCardTemplate component fetches a title from json and renders it', () => {
   const { getByText } = render(<ProtoCardTemplate />);
-  expect(getByText('Physics-Props')).toBeInTheDOM();
-  expect(getByText('Maths')).toBeInTheDOM();
+  expect(getByText('Physics-Props')).toBeInTheDocument();
+  expect(getByText('Maths')).toBeInTheDocument();
 })
