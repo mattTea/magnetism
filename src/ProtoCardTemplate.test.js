@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { render } from 'react-testing-library';
 import ProtoCardTemplate from './ProtoCardTemplate';
 import 'jest-dom/extend-expect';
-import values from './sample.json'
 
 test('renders without crashing', () => {
   const div = document.createElement('div');
