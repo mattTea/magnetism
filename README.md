@@ -24,11 +24,11 @@ Our current functionality includes:
 
 ### To install the project locally
 
-1. Run `./build/buildVM.sh` to build and enter a virtual environment
+1. Run `. apiBuild/buildVM.sh` to build and enter a virtual environment
 
-2. Once in the virtual environment, run `./build/buildEnv.sh` to setup the environment
+2. Once in the virtual environment, run `. apiBuild/buildEnv.sh` to setup the environment
 
-3. If you already have the virtual environment setup from a previous install, you can enter the VM by typing `pipenv shell` and then you can run the `./build/buildEnv.sh` script again if needed
+3. If you already have the virtual environment setup from a previous install, you can enter the VM by typing `pipenv shell` and then you can run the `. apiBuild/buildEnv.sh` script again if needed
 
 ### To run application
 
