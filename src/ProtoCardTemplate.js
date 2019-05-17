@@ -14,7 +14,7 @@ export default class ProtoCardTemplate extends React.Component{
   };
 
   componentDidMount() {
-      fetch('http://127.0.0.1:5000/topics')
+      fetch('/topics')
       .then((response) => response.json())
       .then(function(response) {
         return response
@@ -22,8 +22,6 @@ export default class ProtoCardTemplate extends React.Component{
       .then(data => this.setState({data}));
 
     }
-
-
 
   render() {
     const { data } = this.state;
@@ -55,6 +53,5 @@ export default class ProtoCardTemplate extends React.Component{
         }
       </div>
     );
-
   }
 };
