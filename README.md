@@ -38,7 +38,7 @@ If you are not already in a shell, you will need to do the following:
 
 1. `pipenv shell` - takes you into the virtual environment
 
-2. Consider running `./build/buildEnv.sh` to ensure that your VM is setup correctly
+2. Run `. apiBuild/buildEnv.sh` to ensure that your VM is setup correctly
 
 To run the (backend) application:
 
@@ -56,25 +56,19 @@ npm start
 ```
 ### To run the python tests (backend API)
 
-Again, you need to be in a shell to do this:
+Again, you need to be in a shell to do this (and you need to have run `. apiBuild/buildEnv.sh` to set up the environment):
 
 1. Start the application if you want the splinter tests to work!
 
-2. `pytest`- will run pytest and splinter tests
+2. `pytest -r A`- will run pytest and splinter tests with a summary report
 
-3.  `pytest --cov-report term-missing --cov` use this command to generate a coverage report. If required, it's possible to modify the .coveragerc file in order to specify particular files/folders that you want to scan/omit.  
+3.  `pytest -r A --cov-report term-missing --cov` - will generate a coverage report. If required, it's possible to modify the .coveragerc file in order to specify particular files/folders that you want to scan/omit.  
 
 ### To run the python linter (backend API)
 
 1. `pylint [FILENAME]` e.g. `pylint app.py`- will run the linter
 
-### To run the javascript tests
+### To run the javascript tests (frontend webpage)
 
 1. Switch to front_end directory: `cd src`
 2. Run tests `npm run test`
-
-# Future functionality
-
-In the future we would also like to build:
-
-- The ability for "collaborators" to sign-up and add content for others to use

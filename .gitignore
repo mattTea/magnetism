@@ -15,6 +15,7 @@ node_modules
 # testing
 /coverage
 /src/coverage
+.coverage
 
 # misc
 .env.local
