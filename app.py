@@ -52,6 +52,15 @@ def topics():
     except Exception as error:
         return str(error)
 
+@app.route('/topics/<id>/subtopics', methods=['GET'])
+def subtopics(id):
+    try:
+        subtopic_list = SubTopic.query.filter_by(topic_id=id).all()
+        response = jsonify([e.serialize() for e in subtopic_list])
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+    except Exception as error:
+        return str(error)
 
 if __name__ == '__main__':
     app.run()

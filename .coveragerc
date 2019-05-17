@@ -1,7 +1,7 @@
 [run]
 source=
     app
-    src/
+    api/
 
 omit=
-    src/manage.py
+    api/manage.py
