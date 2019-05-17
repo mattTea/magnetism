@@ -45,30 +45,14 @@ To run the (backend) application:
 1. `python3 app.py`
 
 #### Front-end
-
-1. Switch to the front_end directory:
-
-```
-cd front_end
-```
-2. Install node modules, specified in the package.json:
+1. Install node modules, specified in the package.json:
 
 ```
 npm install
 ```
-
-If you're using yarn, use the following command instead:
-
-```
-yarn
-```
-3. Launch the application:
+2. Launch the application:
 ```
 npm start
-```
-If you're using yarn:
-```
-yarn start
 ```
 ### To run the python tests (backend API)
 
@@ -86,8 +70,8 @@ Again, you need to be in a shell to do this:
 
 ### To run the javascript tests
 
-1. Switch to front_end directory: `cd front_end`
-2. Run tests `npm run test` or `yarn test` if you're using yarn
+1. Switch to front_end directory: `cd src`
+2. Run tests `npm run test`
 
 # Future functionality
 
