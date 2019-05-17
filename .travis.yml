@@ -27,7 +27,7 @@ matrix:
     - language: node_js
       node_js: "10.15.3"
       before_script:
-        - cd front_end
+        - cd src
       cache:
         directories:
           - node_modules
