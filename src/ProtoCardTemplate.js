@@ -14,14 +14,18 @@ export default class ProtoCardTemplate extends React.Component{
   };
 
   componentDidMount() {
-      fetch('/topics')
-      .then((response) => response.json())
-      .then(function(response) {
-        return response
-      })
-      .then(data => this.setState({data}));
-
+    if (window.location.href === "http://localhost:3000/") {
+      var url = "http://localhost:5000/topics"
+    } else {
+      var url = "/topics"
     }
+    fetch(url)
+    .then((response) => response.json())
+    .then(function(response) {
+      return response
+    })
+    .then(data => this.setState({data}));
+  }
 
   render() {
     const { data } = this.state;
