@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import defaultImage from './illustrations/defaultImage.png'
+import logo from '../logo.svg';
+import defaultImage from '../illustrations/defaultImage.png'
 import 'semantic-ui-css/semantic.min.css';
-import './App.css';
+import '../App.css';
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 export class CardTemplate extends React.Component{
@@ -30,7 +30,7 @@ export class CardTemplate extends React.Component{
   }
 
   usedImage = (name) => {
-    const images = this.importAll(require.context('./illustrations', false, /\.(png|jpe?g|svg)$/));
+    const images = this.importAll(require.context('../illustrations', false, /\.(png|jpe?g|svg)$/));
     const lowerCase = name.toLowerCase()
     if (images[ lowerCase + ".png" ]){
       return images[ lowerCase + ".png" ]

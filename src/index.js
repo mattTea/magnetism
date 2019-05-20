@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Card, Icon, Image, Container } from 'semantic-ui-react';
-import { CardTemplate } from './CardTemplate.js'
+import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
+import { createHashHistory } from 'history';
+import TopicsPage from './pages/TopicsPage.js'
 import './App.css';
 
-class TopicsPage extends React.Component {
-  render() {
-    return (
-      <Container>
-  				<CardTemplate nextSection="/subtopics" dataSource="http://localhost:5000/topics"/>
-      </Container>
-    );
-  }
-};
 
-ReactDOM.render(<TopicsPage />, document.getElementById('topics'))
+ReactDOM.render(
+  <TopicsPage/>,
+  document.getElementById('app')
+);
