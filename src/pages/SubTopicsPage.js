@@ -13,3 +13,5 @@ export class SubTopicsPage extends React.Component {
     );
   }
 };
+
+export default SubTopicsPage;
