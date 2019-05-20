@@ -11,7 +11,7 @@ def test_get_topics():
 
   browser.quit()
 
-def test_get_subtopics(add_test_data):
+def test_get_subtopics():
 
   browser = Browser('firefox', headless="true")
 

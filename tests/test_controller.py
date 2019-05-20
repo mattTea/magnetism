@@ -1,10 +1,8 @@
-import flask
-# from api.app import create_app
-# import capybara
+from flask import Flask, json
+from app import *
 
-# capybara.app = create_app
-
-def test_home_route():
-  # visit("/")
-  assert 4 == 4
-   
+def test_topics_route():
+  with app.test_client() as c:
+    resp = c.get('/topics')
+    data = json.loads(resp.data)
+    assert data[0]["name"] == "Mathematics"
