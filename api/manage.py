@@ -3,7 +3,6 @@ from flask_migrate import Migrate, MigrateCommand
 
 import sys
 sys.path.append('.')
-print(sys.path)
 
 from app import app, db
 
