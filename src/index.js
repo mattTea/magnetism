@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'semantic-ui-css/semantic.min.css'
-import './index.css';
-import ProtoCardTemplate from './ProtoCardTemplate';
-import * as serviceWorker from './serviceWorker';
+import { Card, Icon, Image, Container } from 'semantic-ui-react';
+import { CardTemplate } from './CardTemplate.js'
+import './App.css';
 
-ReactDOM.render(<ProtoCardTemplate/>, document.getElementById('topics'));
+class TopicsPage extends React.Component {
+  render() {
+    return (
+      <Container>
+  				<CardTemplate nextSection="/subtopics" dataSource="http://localhost:5000/topics"/>
+      </Container>
+    );
+  }
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<TopicsPage />, document.getElementById('topics'))
