@@ -4,15 +4,14 @@ import { Card, Icon, Image, Container } from 'semantic-ui-react';
 import { CardTemplate } from '../templates/CardTemplate.js'
 import '../App.css';
 
-export class TopicsPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export class SubTopicsPage extends React.Component {
   render() {
     return (
       <Container>
-  				<CardTemplate nextSection='/subtopics' dataSource="/topics"/>
+  				<CardTemplate nextSection="/learn" dataSource="topics/1/subtopics"/>
       </Container>
     );
   }
 };
+
+export default SubTopicsPage;
