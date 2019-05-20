@@ -4,10 +4,14 @@ import { Card, Icon, Image, Container } from 'semantic-ui-react';
 import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
 import { createHashHistory } from 'history';
 import TopicsPage from './pages/TopicsPage.js'
+import SubTopicsPage from './pages/SubTopicsPage.js'
 import './App.css';
 
 
 ReactDOM.render(
-  <TopicsPage/>,
-  document.getElementById('app')
+  <div>
+    <TopicsPage />,
+    <SubTopicsPage />
+  </div>,
+    document.getElementById('app')
 );

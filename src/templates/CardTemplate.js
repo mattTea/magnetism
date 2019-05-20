@@ -56,7 +56,7 @@ export class CardTemplate extends React.Component{
     		</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a href={ this.props.nextSection }>
+          <a href={this.props.nextSection}>
           Learn { item.name }!
           </a>
       </Card.Content>
