@@ -26,21 +26,6 @@ def index():
     """
     return render_template('index.html')
 
-@app.route("/topics/add")
-def add_topic():
-    """ adds a new topic to the topic db table """
-    name = 'Physics'
-    try:
-        topic = Topic(
-            name=name
-        )
-        db.session.add(topic)
-        db.session.commit()
-        return "topic added"
-    except Exception as error:
-        return str(error)
-
-
 @app.route('/topics', methods=['GET'])
 def topics():
     """ returns all topics from the topic db table """
