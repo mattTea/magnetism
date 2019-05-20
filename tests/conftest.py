@@ -7,6 +7,7 @@ from api.models import *
 
 @pytest.fixture(scope="function", autouse=True)
 def teardown_module():
+  db.session.query(Resource).delete()
   db.session.query(SubTopic).delete()
   db.session.query(Topic).delete()
   db.session.commit()
