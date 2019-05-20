@@ -28,4 +28,4 @@ node_modules
 /src/yarn-error.log*
 
 # production
-/src/build
+/build
