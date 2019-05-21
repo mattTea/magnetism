@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
-import defaultImage from '../illustrations/defaultImage.png'
+import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import '../App.css';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 export class CardTemplate extends React.Component{
 

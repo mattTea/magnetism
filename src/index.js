@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, withRouter } from 'react-router';
+import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom'
 import TopicsPage from './pages/TopicsPage.js'
 import SubTopicsPage from './pages/SubTopicsPage.js'
