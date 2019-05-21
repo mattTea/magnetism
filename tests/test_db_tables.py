@@ -3,7 +3,8 @@ from api.models import *
 
 def test_topics_db():
   mathematics=Topic(
-      name="Mathematics"
+      name="Mathematics",
+      description="Mathematics (from Greek μάθημα máthēma, 'knowledge, study, learning') includes the study of such topics as quantity, structure, space, and change.",
   )
   db.session.add(mathematics)
   db.session.commit()
@@ -11,16 +12,19 @@ def test_topics_db():
   topics = Topic.query.all()
 
   assert topics[-1].name == "Mathematics"
+  assert "μάθημα máthēma" in topics[-1].description
 
 def test_subtopics_db():
     mathematics=Topic(
-        name="Mathematics"
+        name="Mathematics",
+        description="Mathematics (from Greek μάθημα máthēma, 'knowledge, study, learning') includes the study of such topics as quantity, structure, space, and change.",
     )
     db.session.add(mathematics)
     db.session.commit()
 
     sums=SubTopic(
         name="Sums",
+        description="In mathematics, sums is the addition of a sequence of any kind of numbers, called addends or summands.",
         topic_id = mathematics.id,
         order = 1
     )
@@ -31,16 +35,19 @@ def test_subtopics_db():
     subtopics = SubTopic.query.all()
 
     assert subtopics[-1].name == "Sums"
+    assert "sums is the addition" in subtopics[-1].description
 
 def test_resources_db():
     mathematics=Topic(
-        name="Mathematics"
+        name="Mathematics",
+        description="Mathematics (from Greek μάθημα máthēma, 'knowledge, study, learning') includes the study of such topics as quantity, structure, space, and change."
     )
     db.session.add(mathematics)
     db.session.commit()
 
     sums=SubTopic(
         name="Sums",
+        description="In mathematics, sums is the addition of a sequence of any kind of numbers, called addends or summands.",
         topic_id = mathematics.id,
         order = 1
     )
