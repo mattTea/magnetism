@@ -9,7 +9,7 @@ export class SubTopicsPage extends React.Component {
   render() {
     return (
       <Container>
-  				<CardTemplate thisSection={this.props.location.pathname + "/"} nextSection="/resources" dataSource={this.props.location.pathname}/>
+  				<CardTemplate thisSection={this.props.location.pathname + "/"} nextSection="/resources" dataSource={"/api" + this.props.location.pathname}/>
       </Container>
     );
   }

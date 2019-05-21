@@ -7,7 +7,7 @@ import 'jest-dom/extend-expect';
 
 test('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<CardTemplate thisSection={"/topics" + "/"} nextSection="/subtopics" dataSource="/topics"/>, div);
+  ReactDOM.render(<CardTemplate thisSection={"/topics" + "/"} nextSection="/subtopics" dataSource="/api/topics"/>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
