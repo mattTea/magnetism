@@ -9,7 +9,7 @@ def test_topics_route():
   db.session.commit()
 
   with app.test_client() as c:
-    resp = c.get('/topics')
+    resp = c.get('/api/topics')
     data = json.loads(resp.data)
     assert data[0]["name"] == "Mathematics"
 
@@ -29,7 +29,7 @@ def test_subtopics_route():
   db.session.commit()
 
   with app.test_client() as c:
-    resp = c.get('/topics/{}/subtopics'.format(topic.id))
+    resp = c.get('/api/topics/{}/subtopics'.format(topic.id))
     data = json.loads(resp.data)
     assert data[0]["name"] == "butterfly"
 
@@ -58,7 +58,7 @@ def test_resources_route():
   db.session.commit()
 
   with app.test_client() as c:
-    resp = c.get('/topics/{topic}/subtopics/{subtopic}/resources'.format(topic=topic.id, subtopic=subtopic.id))
+    resp = c.get('/api/topics/{topic}/subtopics/{subtopic}/resources'.format(topic=topic.id, subtopic=subtopic.id))
     data = json.loads(resp.data)
     assert data[0]["name"] == "Array theory"
     assert data[0]["content"] == "Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error"
@@ -94,7 +94,7 @@ def test_resources_post_feedback():
       rating_before = Resource.query.filter_by(id=resource.id).first().rating
       assert rating_before != 1
 
-      url = '/topics/{topic}/subtopics/{subtopic}/resources/{resource}/feedback'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
+      url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/feedback'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
       resp = c.post(url, json=request_string)
 
       assert resp.status == "200 OK"
