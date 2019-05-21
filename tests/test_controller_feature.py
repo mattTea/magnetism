@@ -11,7 +11,7 @@ def test_get_topics():
   db.session.add(topic)
   db.session.commit()
 
-  browser.visit('http://localhost:5000/topics')
+  browser.visit('http://localhost:5000/api/topics')
   assert browser.is_text_present('Physics')
 
   browser.quit()
@@ -36,7 +36,7 @@ def test_get_subtopics():
 
   list = Topic.query.all()
   topicId = list[-1].id
-  browser.visit('http://localhost:5000/topics/{}/subtopics'.format(topicId))
+  browser.visit('http://localhost:5000/api/topics/{}/subtopics'.format(topicId))
   assert browser.is_text_present('butterfly')
 
   browser.quit()
@@ -68,7 +68,7 @@ def test_get_resources_for_subtopic():
   db.session.add(resource)
   db.session.commit()
 
-  browser.visit('http://localhost:5000/topics/{topic}/subtopics/{subtopic}/resources'.format(topic=topic.id, subtopic=subtopic.id))
+  browser.visit('http://localhost:5000/api/topics/{topic}/subtopics/{subtopic}/resources'.format(topic=topic.id, subtopic=subtopic.id))
 
   assert browser.is_text_present('Notation theory')
   assert browser.is_text_present("la la la la la la. Do ray me fah so lah te da")

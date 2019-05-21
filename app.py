@@ -26,7 +26,7 @@ def index():
     """
     return render_template('index.html')
 
-@app.route('/topics', methods=['GET'])
+@app.route('/api/topics', methods=['GET'])
 def topics():
     """ returns all topics from the topic db table """
     try:
@@ -37,7 +37,7 @@ def topics():
     except Exception as error:
         return str(error), 500
 
-@app.route('/topics/<id>/subtopics', methods=['GET'])
+@app.route('/api/topics/<id>/subtopics', methods=['GET'])
 def subtopics(id):
     try:
         subtopic_list = SubTopic.query.filter_by(topic_id=id).all()
@@ -47,7 +47,7 @@ def subtopics(id):
     except Exception as error:
         return str(error), 500
 
-@app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
+@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
 def resources(topic_id, subtopic_id):
     try:
         resource_list = Resource.query.filter_by(subtopic_id=subtopic_id).all()
@@ -60,7 +60,7 @@ def resources(topic_id, subtopic_id):
 if __name__ == '__main__':
     app.run()
 
-@app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/feedback', methods=['POST'])
+@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/feedback', methods=['POST'])
 def record_feedback(topic_id, subtopic_id, resource_id):
     try:
         feedback = request.get_json()
