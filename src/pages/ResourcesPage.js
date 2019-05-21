@@ -4,6 +4,8 @@ import { CardTemplate } from '../templates/CardTemplate.js'
 import '../App.css';
 
 export class ResourcesPage extends React.Component {
+
+
   render() {
     return (
       <Container>

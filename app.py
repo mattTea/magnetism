@@ -5,7 +5,7 @@ This script is api router it:
 """
 
 import os
-from flask import Flask, jsonify, render_template, request, json
+from flask import Flask, jsonify, render_template, request, json, redirect
 from api.config import app_config
 
 from flask_sqlalchemy import SQLAlchemy
@@ -19,8 +19,26 @@ db = SQLAlchemy(app)
 
 from api.models import *
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
+    return redirect('/topics')
+
+@app.route('/topics', methods=['GET'])
+def topicsindex():
+    """
+    example endpoint
+    """
+    return render_template('index.html')
+
+@app.route('/topics/<topic_id>/subtopics', methods=['GET'])
+def subtopicsindex(topic_id):
+    """
+    example endpoint
+    """
+    return render_template('index.html')
+
+@app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
+def resourcesindex(topic_id, subtopic_id):
     """
     example endpoint
     """

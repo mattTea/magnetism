@@ -4,6 +4,7 @@ import { CardTemplate } from '../templates/CardTemplate.js'
 import '../App.css';
 
 class TopicsPage extends React.Component {
+
   render() {
     return (
       <Container>
