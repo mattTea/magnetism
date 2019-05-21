@@ -3,7 +3,8 @@ from app import *
 
 def test_topics_route():
   topic = Topic(
-    name="Mathematics"
+    name="Mathematics",
+    description="Some stuff about maths"
   )
   db.session.add(topic)
   db.session.commit()
@@ -15,13 +16,15 @@ def test_topics_route():
 
 def test_subtopics_route():
   topic = Topic(
-    name="Swimming"
+    name="Swimming",
+    description="Some stuff about swimming"
   )
   db.session.add(topic)
   db.session.commit()
 
   subtopic = SubTopic(
     name="butterfly",
+    description="Some stuff about butterfly",
     topic_id=topic.id,
     order=1
   )
@@ -35,13 +38,15 @@ def test_subtopics_route():
 
 def test_resources_route():
   topic = Topic(
-    name="Ruby"
+    name="Ruby",
+    description="Some stuff about Ruby"
   )
   db.session.add(topic)
   db.session.commit()
 
   subtopic = SubTopic(
     name="Arrays",
+    description="Some stuff about Arrays",
     topic_id=topic.id,
     order=1
   )
@@ -66,13 +71,15 @@ def test_resources_route():
 
 def test_resources_post_feedback():
     topic = Topic(
-      name="Ruby"
+      name="Ruby",
+      description="Some stuff about Ruby"
     )
     db.session.add(topic)
     db.session.commit()
 
     subtopic = SubTopic(
       name="Arrays",
+      description="Some stuff about Arrays",
       topic_id=topic.id,
       order=1
     )
