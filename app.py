@@ -5,7 +5,7 @@ This script is api router it:
 """
 
 import os
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request, json
 from api.config import app_config
 
 from flask_sqlalchemy import SQLAlchemy
@@ -35,7 +35,7 @@ def topics():
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as error:
-        return str(error)
+        return str(error), 500
 
 @app.route('/topics/<id>/subtopics', methods=['GET'])
 def subtopics(id):
@@ -45,7 +45,7 @@ def subtopics(id):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as error:
-        return str(error)
+        return str(error), 500
 
 @app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
 def resources(topic_id, subtopic_id):
@@ -55,7 +55,24 @@ def resources(topic_id, subtopic_id):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as error:
-        return str(error)
+        return str(error), 500
+
+if __name__ == '__main__':
+    app.run()
+
+@app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/feedback', methods=['POST'])
+def record_feedback(topic_id, subtopic_id, resource_id):
+    try:
+        feedback = request.get_json()
+
+        resource = Resource.query.filter_by(id=resource_id).first()
+        resource.rating = feedback['feedback']
+        db.session.commit
+
+
+        return "200 OK"
+    except Exception as error:
+        return str(error), 500
 
 if __name__ == '__main__':
     app.run()
