@@ -42,7 +42,6 @@ export class CardTemplate extends React.Component{
   }
 
   render(){
-
     const itemListArray = this.state.list;
 
     const itemList = itemListArray.map((item) => {

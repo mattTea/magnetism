@@ -5,15 +5,14 @@ import {withRouter} from 'react-router-dom'
 import { CardTemplate } from '../templates/CardTemplate.js'
 import '../App.css';
 
-export class SubTopicsPage extends React.Component {
+export class ResourcesPage extends React.Component {
   render() {
     return (
       <Container>
-  				<CardTemplate thisSection={this.props.location.pathname + "/"} nextSection="/resources" dataSource={this.props.location.pathname}/>
+  				<CardTemplate thisSection={this.props.location.pathname + "/"} nextSection="/content" dataSource={this.props.location.pathname}/>
       </Container>
     );
   }
 };
 
-
-export default SubTopicsPage;
+export default ResourcesPage;
