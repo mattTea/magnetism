@@ -5,7 +5,7 @@ This script is api router it:
 """
 
 import os
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request, json
 from api.config import app_config
 
 from flask_sqlalchemy import SQLAlchemy
@@ -26,7 +26,7 @@ def index():
     """
     return render_template('index.html')
 
-@app.route('/topics', methods=['GET'])
+@app.route('/api/topics', methods=['GET'])
 def topics():
     """ returns all topics from the topic db table """
     try:
@@ -35,9 +35,9 @@ def topics():
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as error:
-        return str(error)
+        return str(error), 500
 
-@app.route('/topics/<id>/subtopics', methods=['GET'])
+@app.route('/api/topics/<id>/subtopics', methods=['GET'])
 def subtopics(id):
     try:
         subtopic_list = SubTopic.query.filter_by(topic_id=id).all()
@@ -45,9 +45,9 @@ def subtopics(id):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as error:
-        return str(error)
+        return str(error), 500
 
-@app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
+@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
 def resources(topic_id, subtopic_id):
     try:
         resource_list = Resource.query.filter_by(subtopic_id=subtopic_id).all()
@@ -55,7 +55,24 @@ def resources(topic_id, subtopic_id):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as error:
-        return str(error)
+        return str(error), 500
+
+if __name__ == '__main__':
+    app.run()
+
+@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/feedback', methods=['POST'])
+def record_feedback(topic_id, subtopic_id, resource_id):
+    try:
+        feedback = request.get_json()
+
+        resource = Resource.query.filter_by(id=resource_id).first()
+        resource.rating = feedback['feedback']
+        db.session.commit
+
+
+        return "200 OK"
+    except Exception as error:
+        return str(error), 500
 
 if __name__ == '__main__':
     app.run()
