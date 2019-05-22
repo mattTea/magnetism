@@ -41,9 +41,9 @@ export class CardTemplate extends React.Component{
   render(){
     const itemListArray = this.state.list;
     const itemList = itemListArray.map((item) => {
-    const thisURL = window.location.pathname
-    const appendURL = thisURL.includes('subtopic')? '/' + item.id + '/resources' : '/' + item.id + '/subtopics'
-    const finalURL = thisURL + appendURL
+      const thisURL = window.location.pathname
+      const appendURL = thisURL.includes('subtopic')? '/' + item.id + '/resources' : '/' + item.id + '/subtopics'
+      const finalURL = thisURL + appendURL
       return <Card key={ item.id } color='purple' >
       <Image src={ this.usedImage(item.name) } wrapped ui={false} />
       <Card.Content>

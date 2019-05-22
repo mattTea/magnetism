@@ -19,7 +19,7 @@ db = SQLAlchemy(app)
 
 from api.models import *
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return redirect('/topics')
 
@@ -39,6 +39,13 @@ def subtopicsindex(topic_id):
 
 @app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
 def resourcesindex(topic_id, subtopic_id):
+    """
+    example endpoint
+    """
+    return render_template('index.html')
+
+@app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/reviews', methods=['GET'])
+def reviewsindex(topic_id, subtopic_id, resource_id):
     """
     example endpoint
     """
@@ -75,23 +82,19 @@ def resources(topic_id, subtopic_id):
     except Exception as error:
         return str(error), 500
 
-if __name__ == '__main__':
-    app.run()
-
 @app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/reviews', methods=['POST'])
 def record_feedback(topic_id, subtopic_id, resource_id):
     try:
         user_input_score = request.get_json()
 
-        review = Review(
-            score = user_input_score['score'],
+        review=Review(
+            score = user_input_score["score"],
             resource_id = resource_id
         )
-        
         db.session.add(review)
-        db.session.commit
+        db.session.commit()
 
-        return "200 OK"
+        return str(user_input_score["score"])
     except Exception as error:
         return str(error), 500
 
