@@ -5,7 +5,7 @@ This script is api router it:
 """
 
 import os
-from flask import Flask, jsonify, render_template, request, json
+from flask import Flask, jsonify, render_template, request, json, redirect
 from api.config import app_config
 
 from flask_sqlalchemy import SQLAlchemy
@@ -19,8 +19,26 @@ db = SQLAlchemy(app)
 
 from api.models import *
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
+    return redirect('/topics')
+
+@app.route('/topics', methods=['GET'])
+def topicsindex():
+    """
+    example endpoint
+    """
+    return render_template('index.html')
+
+@app.route('/topics/<topic_id>/subtopics', methods=['GET'])
+def subtopicsindex(topic_id):
+    """
+    example endpoint
+    """
+    return render_template('index.html')
+
+@app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
+def resourcesindex(topic_id, subtopic_id):
     """
     example endpoint
     """
@@ -60,15 +78,18 @@ def resources(topic_id, subtopic_id):
 if __name__ == '__main__':
     app.run()
 
-@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/feedback', methods=['POST'])
+@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/reviews', methods=['POST'])
 def record_feedback(topic_id, subtopic_id, resource_id):
     try:
-        feedback = request.get_json()
+        user_input_score = request.get_json()
 
-        resource = Resource.query.filter_by(id=resource_id).first()
-        resource.rating = feedback['feedback']
+        review = Review(
+            score = user_input_score['score'],
+            resource_id = resource_id
+        )
+        
+        db.session.add(review)
         db.session.commit
-
 
         return "200 OK"
     except Exception as error:
