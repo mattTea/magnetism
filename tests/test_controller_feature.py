@@ -79,4 +79,42 @@ def test_get_resources_for_subtopic():
 
   browser.quit()
 
-  
+def test_reviews_for_resource():
+
+    browser = Browser('firefox', headless="true")
+
+    topic = Topic(
+      name="Sport",
+      description="Some stuff about Sport"
+    )
+    db.session.add(topic)
+    db.session.commit()
+
+    subtopic = SubTopic(
+      name="Rugby",
+      description="Some stuff about Rugby",
+      topic_id=topic.id,
+      order=1
+    )
+    db.session.add(subtopic)
+    db.session.commit()
+
+    resource = Resource(
+      name="How to make a tackle",
+      content="take out the legs!",
+      subtopic_id = subtopic.id,
+    )
+    db.session.add(resource)
+    db.session.commit()
+
+    review = Review(
+        score=4,
+        resource_id = resource.id
+    )
+
+    db.session.add(review)
+    db.session.commit()
+
+    browser.visit('http://localhost:5000/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/reviews'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id))
+
+    assert browser.is_text_present('"score": 4')
