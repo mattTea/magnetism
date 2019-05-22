@@ -78,15 +78,18 @@ def resources(topic_id, subtopic_id):
 if __name__ == '__main__':
     app.run()
 
-@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/feedback', methods=['POST'])
+@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/reviews', methods=['POST'])
 def record_feedback(topic_id, subtopic_id, resource_id):
     try:
-        feedback = request.get_json()
+        user_input_score = request.get_json()
 
-        resource = Resource.query.filter_by(id=resource_id).first()
-        resource.rating = feedback['feedback']
+        review = Review(
+            score = user_input_score['score'],
+            resource_id = resource_id
+        )
+        
+        db.session.add(review)
         db.session.commit
-
 
         return "200 OK"
     except Exception as error:

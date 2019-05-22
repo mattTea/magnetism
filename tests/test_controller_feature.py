@@ -6,7 +6,8 @@ def test_get_topics():
   browser = Browser('firefox', headless="true")
 
   topic = Topic(
-    name="Physics"
+    name="Physics",
+    description="Some stuff about Physics"
   )
   db.session.add(topic)
   db.session.commit()
@@ -21,13 +22,15 @@ def test_get_subtopics():
   browser = Browser('firefox', headless="true")
 
   topic = Topic(
-    name="Swimming"
+    name="Swimming",
+    description="Some stuff about swimming"
   )
   db.session.add(topic)
   db.session.commit()
 
   subtopic = SubTopic(
     name="butterfly",
+    description="Some stuff about butterfly",
     topic_id=topic.id,
     order=1
   )
@@ -46,13 +49,15 @@ def test_get_resources_for_subtopic():
   browser = Browser('firefox', headless="true")
 
   topic = Topic(
-    name="Music"
+    name="Music",
+    description="Some stuff about Music"
   )
   db.session.add(topic)
   db.session.commit()
 
   subtopic = SubTopic(
     name="notation",
+    description="Some stuff about notation",
     topic_id=topic.id,
     order=1
   )
@@ -63,7 +68,6 @@ def test_get_resources_for_subtopic():
     name="Notation theory",
     content="la la la la la la. Do ray me fah so lah te da",
     subtopic_id = subtopic.id,
-    rating = 1
   )
   db.session.add(resource)
   db.session.commit()
@@ -74,3 +78,5 @@ def test_get_resources_for_subtopic():
   assert browser.is_text_present("la la la la la la. Do ray me fah so lah te da")
 
   browser.quit()
+
+  

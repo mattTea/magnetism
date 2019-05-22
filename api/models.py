@@ -5,9 +5,11 @@ class Topic(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
+    description = db.Column(db.String())
 
-    def __init__(self, name):
+    def __init__(self, name, description):
         self.name = name
+        self.description = description
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -15,7 +17,8 @@ class Topic(db.Model):
     def serialize(self):
         return {
             'id': self.id,
-            'name': self.name
+            'name': self.name,
+            'description': self.description
         }
 
 
@@ -24,11 +27,13 @@ class SubTopic(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
+    description = db.Column(db.String())
     topic_id = db.Column(db.Integer, db.ForeignKey('topics.id'))
     order = db.Column(db.Integer)
 
-    def __init__(self, name, topic_id, order):
+    def __init__(self, name, description, topic_id, order):
         self.name = name
+        self.description = description
         self.topic_id = topic_id
         self.order = order
 
@@ -39,6 +44,7 @@ class SubTopic(db.Model):
         return {
             'id': self.id,
             'name': self.name,
+            'description': self.description,
             'topic_id': self.topic_id,
             'order': self.order
         }
@@ -50,13 +56,11 @@ class Resource(db.Model):
     name = db.Column(db.String())
     content = db.Column(db.String())
     subtopic_id = db.Column(db.Integer, db.ForeignKey('subtopics.id'))
-    rating = db.Column(db.Integer)
 
-    def __init__(self, name, content, subtopic_id, rating):
+    def __init__(self, name, content, subtopic_id):
         self.name = name
         self.content = content
         self.subtopic_id = subtopic_id
-        self.rating = rating
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -67,5 +71,25 @@ class Resource(db.Model):
             'name': self.name,
             'content': self.content,
             'subtopic_id': self.subtopic_id,
-            'rating': self.rating
+        }
+
+class Review(db.Model):
+    __tablename__ = 'reviews'
+
+    id = db.Column(db.Integer, primary_key=True)
+    score = db.Column(db.Integer)
+    resource_id = db.Column(db.Integer, db.ForeignKey('resources.id')) 
+
+    def __init__(self, score, resource_id):
+        self.score = score
+        self.resource_id = resource_id
+
+    def __repr__(self):
+        return '<id {}>'.format(self.id)
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'score': self.score,
+            'resource_id': self.resource_id,
         }

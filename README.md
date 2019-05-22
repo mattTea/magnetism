@@ -3,26 +3,38 @@ Magnetism Neto Learning
 
 [![Build Status](https://travis-ci.com/mattTea/magnetism.svg?branch=master)](https://travis-ci.com/mattTea/magnetism)
 
+Visit the deployed application [here](http://mag-neto.herokuapp.com/)
+
+
 # About the project
 
 For our final project, Team Magnetism have built a learning application. The idea is that anyone who wants to learn something new can have access to suggested learning paths/knowledge nuggets with "rated" resources. The more people that use the service, the more accurate and useful the ratings will become.
 
-Our current functionality includes:
+
+### Functionality
 
 1. The ability to pick a topic (MVP - work in progress)
+
 2. The ability to see sub-topics/learning paths/knowledge nuggets for that topic (MVP - work in progress)
+
 3. The ability to see learning resources for sub-topics/learning paths/knowledge nuggets (MVP - work in progress)
+
 4. The ability to give a rating to the resource (MVP - work in progress)
 
-## In this project
+------
+
+## Technologies used
 
 - Python for the backend API
 - Pytest for unit tests for python
 - Splinter for feature tests for python
 
-- REACT for the frontend
+- React.js for the user interface
+- Jest for javascript testing
 
-### To install the project locally
+------
+
+## To install the project locally
 
 1. Run `. apiBuild/buildVM.sh` to build and enter a virtual environment
 
@@ -30,9 +42,11 @@ Our current functionality includes:
 
 3. If you already have the virtual environment setup from a previous install, you can enter the VM by typing `pipenv shell` and then you can run the `. apiBuild/buildEnv.sh` script again if needed
 
-### To run application
+------
 
-#### Back-end
+## To run application
+
+### Backend api
 
 If you are not already in a shell, you will need to do the following:
 
@@ -40,35 +54,51 @@ If you are not already in a shell, you will need to do the following:
 
 2. Run `. apiBuild/buildEnv.sh` to ensure that your VM is setup correctly
 
-To run the (backend) application:
+3. Run `python3 app.py` to run the api application
 
-1. `python3 app.py`
+4. (To kill the shell -> `ctrl` + `c`)
 
-#### Front-end
+
+### Front-end UI
+
 1. Install node modules, specified in the package.json:
 
 ```
 npm install
 ```
+
 2. Launch the application:
 ```
 npm start
 ```
-### To run the python tests (backend API)
 
-Again, you need to be in a shell to do this (and you need to have run `. apiBuild/buildEnv.sh` to set up the environment):
+3. Visit `http://localhost:3000`
 
-1. Start the application if you want the splinter tests to work!
+------
 
-2. `pytest -r A`- will run pytest and splinter tests with a summary report
+## To run tests
 
-3.  `pytest -r A --cov-report term-missing --cov` - will generate a coverage report. If required, it's possible to modify the .coveragerc file in order to specify particular files/folders that you want to scan/omit.  
+### Python backend api tests
 
-### To run the python linter (backend API)
+1. If you are not already in a shell, you will need to do the following:
+    - Run `pipenv shell` - takes you into the virtual environment
+    - Run `. apiBuild/buildEnv.sh` to ensure that your VM is setup correctly
 
-1. `pylint [FILENAME]` e.g. `pylint app.py`- will run the linter
+2. Start the application by running `python3 app.py` (so that the splinter feature tests work)
 
-### To run the javascript tests (frontend webpage)
+3. `pytest -r A`- will run pytest and splinter tests with a summary report
+
+4. `pytest -r A --cov-report term-missing --cov` - will generate a coverage report. If required, it's possible to modify the `.coveragerc` file in order to specify particular files/folders that you want to scan/omit.  
+
+
+### Javascript frontend UI tests
 
 1. Switch to front_end directory: `cd src`
+
 2. Run tests `npm run test`
+
+------
+
+## To run the python linter (backend api)
+
+1. `pylint [FILENAME]` e.g. `pylint app.py`- will run the linter for the `app.py` file

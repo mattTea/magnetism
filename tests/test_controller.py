@@ -3,7 +3,8 @@ from app import *
 
 def test_topics_route():
   topic = Topic(
-    name="Mathematics"
+    name="Mathematics",
+    description="Some stuff about maths"
   )
   db.session.add(topic)
   db.session.commit()
@@ -15,13 +16,15 @@ def test_topics_route():
 
 def test_subtopics_route():
   topic = Topic(
-    name="Swimming"
+    name="Swimming",
+    description="Some stuff about swimming"
   )
   db.session.add(topic)
   db.session.commit()
 
   subtopic = SubTopic(
     name="butterfly",
+    description="Some stuff about butterfly",
     topic_id=topic.id,
     order=1
   )
@@ -35,13 +38,15 @@ def test_subtopics_route():
 
 def test_resources_route():
   topic = Topic(
-    name="Ruby"
+    name="Ruby",
+    description="Some stuff about Ruby"
   )
   db.session.add(topic)
   db.session.commit()
 
   subtopic = SubTopic(
     name="Arrays",
+    description="Some stuff about Arrays",
     topic_id=topic.id,
     order=1
   )
@@ -52,7 +57,6 @@ def test_resources_route():
     name="Array theory",
     content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
     subtopic_id = subtopic.id,
-    rating = 1
   )
   db.session.add(resource)
   db.session.commit()
@@ -64,15 +68,17 @@ def test_resources_route():
     assert data[0]["content"] == "Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error"
 
 
-def test_resources_post_feedback():
+def test_post_review():
     topic = Topic(
-      name="Ruby"
+      name="Ruby",
+      description="Some stuff about Ruby"
     )
     db.session.add(topic)
     db.session.commit()
 
     subtopic = SubTopic(
       name="Arrays",
+      description="Some stuff about Arrays",
       topic_id=topic.id,
       order=1
     )
@@ -83,21 +89,19 @@ def test_resources_post_feedback():
       name="Array theory",
       content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
       subtopic_id = subtopic.id,
-      rating = 0
     )
     db.session.add(resource)
     db.session.commit()
 
-    request_string = {"feedback": 1}
+    post_review = {"score": 87}
 
     with app.test_client() as c:
-      rating_before = Resource.query.filter_by(id=resource.id).first().rating
-      assert rating_before != 1
+      assert len(Review.query.all()) == 0
 
-      url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/feedback'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
-      resp = c.post(url, json=request_string)
+      url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/reviews'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
+      resp = c.post(url, json=post_review)
 
       assert resp.status == "200 OK"
 
-      rating_after = Resource.query.filter_by(id=resource.id).first().rating
-      assert rating_after == 1
+      score = Review.query.filter_by(resource_id=resource.id).first().score
+      assert score == 87
