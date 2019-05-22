@@ -96,7 +96,10 @@ def record_feedback(topic_id, subtopic_id, resource_id):
         try:
             review_list = Review.query.filter_by(resource_id=resource_id).all()
 
-            response = jsonify([e.serialize() for e in review_list])
+            create_object = {"average":4}
+            create_object['scores'] = [e.serialize() for e in review_list]
+
+            response = jsonify(create_object)
             response.headers.add('Access-Control-Allow-Origin', '*')
             return response
         except Exception as error:

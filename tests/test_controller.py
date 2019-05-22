@@ -144,49 +144,49 @@ def test_get_review_scores():
       get_url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/reviews'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
       resp = c.get(get_url)
       data = json.loads(resp.data)
-      assert data[0]["score"] == 87
+      assert data['scores'][0]["score"] == 87
 
-# def test_get_review_average():
-#     topic = Topic(
-#       name="Ruby",
-#       description="Some stuff about Ruby"
-#     )
-#     db.session.add(topic)
-#     db.session.commit()
-#
-#     subtopic = SubTopic(
-#       name="Arrays",
-#       description="Some stuff about Arrays",
-#       topic_id=topic.id,
-#       order=1
-#     )
-#     db.session.add(subtopic)
-#     db.session.commit()
-#
-#     resource = Resource(
-#       name="Array theory",
-#       content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
-#       subtopic_id = subtopic.id,
-#     )
-#     db.session.add(resource)
-#     db.session.commit()
-#
-#     post_first_review = {"score": 3}
-#     post_second_review = {"score": 5}
-#
-#     with app.test_client() as c:
-#       assert len(Review.query.all()) == 0
-#
-#       url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/reviews'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
-#
-#       resp = c.post(url, json=post_first_review)
-#       assert resp.status == "200 OK"
-#
-#       resp = c.post(url, json=post_second_review)
-#       assert resp.status == "200 OK"
-#
-#       get_url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/reviews'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
-#       resp = c.get(get_url)
-#       data = json.loads(resp.data)
-#       print(data)
-#       assert data[0]["average"] == 4
+def test_get_review_average():
+    topic = Topic(
+      name="Ruby",
+      description="Some stuff about Ruby"
+    )
+    db.session.add(topic)
+    db.session.commit()
+
+    subtopic = SubTopic(
+      name="Arrays",
+      description="Some stuff about Arrays",
+      topic_id=topic.id,
+      order=1
+    )
+    db.session.add(subtopic)
+    db.session.commit()
+
+    resource = Resource(
+      name="Array theory",
+      content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
+      subtopic_id = subtopic.id,
+    )
+    db.session.add(resource)
+    db.session.commit()
+
+    post_first_review = {"score": 3}
+    post_second_review = {"score": 5}
+
+    with app.test_client() as c:
+      assert len(Review.query.all()) == 0
+
+      url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/reviews'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
+
+      resp = c.post(url, json=post_first_review)
+      assert resp.status == "200 OK"
+
+      resp = c.post(url, json=post_second_review)
+      assert resp.status == "200 OK"
+
+      get_url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/reviews'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
+      resp = c.get(get_url)
+
+      data = json.loads(resp.data)
+      assert data["average"] == 4
