@@ -78,3 +78,5 @@ def test_get_resources_for_subtopic():
   assert browser.is_text_present("la la la la la la. Do ray me fah so lah te da")
 
   browser.quit()
+
+  
