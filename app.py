@@ -94,7 +94,7 @@ def record_feedback(topic_id, subtopic_id, resource_id):
         db.session.add(review)
         db.session.commit()
 
-        return str(user_input_score["score"])
+        return "200 OK"
     except Exception as error:
         return str(error), 500
 
