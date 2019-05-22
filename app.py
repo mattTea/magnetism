@@ -87,7 +87,7 @@ def record_feedback(topic_id, subtopic_id, resource_id):
             )
 
             db.session.add(review)
-            db.session.commit
+            db.session.commit()
 
             return "200 OK"
         except Exception as error:
