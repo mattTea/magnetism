@@ -68,7 +68,6 @@ def test_get_resources_for_subtopic():
     name="Notation theory",
     content="la la la la la la. Do ray me fah so lah te da",
     subtopic_id = subtopic.id,
-    rating = 1
   )
   db.session.add(resource)
   db.session.commit()

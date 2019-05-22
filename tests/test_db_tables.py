@@ -59,7 +59,6 @@ def test_resources_db():
         name="Long Division",
         content="Don't forget to carry the 1",
         subtopic_id = sums.id,
-        rating = 1
     )
     
     db.session.add(longDivision)

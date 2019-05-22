@@ -57,7 +57,6 @@ def test_resources_route():
     name="Array theory",
     content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
     subtopic_id = subtopic.id,
-    rating = 1
   )
   db.session.add(resource)
   db.session.commit()
@@ -69,42 +68,41 @@ def test_resources_route():
     assert data[0]["content"] == "Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error"
 
 
-def test_resources_post_feedback():
-    topic = Topic(
-      name="Ruby",
-      description="Some stuff about Ruby"
-    )
-    db.session.add(topic)
-    db.session.commit()
+# def test_resources_post_feedback():
+#     topic = Topic(
+#       name="Ruby",
+#       description="Some stuff about Ruby"
+#     )
+#     db.session.add(topic)
+#     db.session.commit()
 
-    subtopic = SubTopic(
-      name="Arrays",
-      description="Some stuff about Arrays",
-      topic_id=topic.id,
-      order=1
-    )
-    db.session.add(subtopic)
-    db.session.commit()
+#     subtopic = SubTopic(
+#       name="Arrays",
+#       description="Some stuff about Arrays",
+#       topic_id=topic.id,
+#       order=1
+#     )
+#     db.session.add(subtopic)
+#     db.session.commit()
 
-    resource = Resource(
-      name="Array theory",
-      content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
-      subtopic_id = subtopic.id,
-      rating = 0
-    )
-    db.session.add(resource)
-    db.session.commit()
+#     resource = Resource(
+#       name="Array theory",
+#       content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
+#       subtopic_id = subtopic.id,
+#     )
+#     db.session.add(resource)
+#     db.session.commit()
 
-    request_string = {"feedback": 1}
+#     request_string = {"feedback": 1}
 
-    with app.test_client() as c:
-      rating_before = Resource.query.filter_by(id=resource.id).first().rating
-      assert rating_before != 1
+#     with app.test_client() as c:
+#       rating_before = Resource.query.filter_by(id=resource.id).first().rating
+#       assert rating_before != 1
 
-      url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/feedback'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
-      resp = c.post(url, json=request_string)
+#       url = '/api/topics/{topic}/subtopics/{subtopic}/resources/{resource}/feedback'.format(topic=topic.id, subtopic=subtopic.id, resource=resource.id)
+#       resp = c.post(url, json=request_string)
 
-      assert resp.status == "200 OK"
+#       assert resp.status == "200 OK"
 
-      rating_after = Resource.query.filter_by(id=resource.id).first().rating
-      assert rating_after == 1
+#       rating_after = Resource.query.filter_by(id=resource.id).first().rating
+#       assert rating_after == 1
