@@ -1,7 +1,7 @@
 """
-This script is api router it:
-   - responds to GET requests for data from the front end with JSON data packets
-   - recieves POST requests from the front end which invokes methods in the model
+This file is where the API routing happens
+   - responds to GET requests for data from the front end with JSON data
+   - receives POST requests from the front end which send JSON data
 """
 
 import os
@@ -75,25 +75,32 @@ def resources(topic_id, subtopic_id):
     except Exception as error:
         return str(error), 500
 
-if __name__ == '__main__':
-    app.run()
-
-@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/reviews', methods=['POST'])
+@app.route('/api/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/reviews', methods=['POST', 'GET'])
 def record_feedback(topic_id, subtopic_id, resource_id):
-    try:
-        user_input_score = request.get_json()
+    if request.method == "POST":
+        try:
+            user_input_score = request.get_json()
 
-        review = Review(
-            score = user_input_score['score'],
-            resource_id = resource_id
-        )
-        
-        db.session.add(review)
-        db.session.commit
+            review = Review(
+                score = user_input_score['score'],
+                resource_id = resource_id
+            )
 
-        return "200 OK"
-    except Exception as error:
-        return str(error), 500
+            db.session.add(review)
+            db.session.commit
+
+            return "200 OK"
+        except Exception as error:
+            return str(error), 500
+    elif request.method == "GET":
+        try:
+            review_list = Review.query.filter_by(resource_id=resource_id).all()
+
+            response = jsonify([e.serialize() for e in review_list])
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return response
+        except Exception as error:
+            return str(error), 500
 
 if __name__ == '__main__':
     app.run()
