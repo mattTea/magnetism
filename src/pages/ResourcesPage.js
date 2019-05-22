@@ -5,10 +5,6 @@ import '../App.css';
 
 export class ResourcesPage extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Container>

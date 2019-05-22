@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from '../logo.svg';
 import 'semantic-ui-css/semantic.min.css';
 import '../App.css';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 export class CardTemplate extends React.Component{
-
 
   constructor(props) {
     super(props);
@@ -43,9 +41,9 @@ export class CardTemplate extends React.Component{
   render(){
     const itemListArray = this.state.list;
     const itemList = itemListArray.map((item) => {
-      const thisURL = window.location.pathname
-      const appendURL = thisURL.includes('subtopic')? '/' + item.id + '/resources' : '/' + item.id + '/subtopics'
-      const finalURL = thisURL + appendURL
+    const thisURL = window.location.pathname
+    const appendURL = thisURL.includes('subtopic')? '/' + item.id + '/resources' : '/' + item.id + '/subtopics'
+    const finalURL = thisURL + appendURL
       return <Card key={ item.id } color='purple' >
       <Image src={ this.usedImage(item.name) } wrapped ui={false} />
       <Card.Content>

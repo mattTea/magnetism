@@ -9,8 +9,3 @@ test('renders without crashing', () => {
   ReactDOM.render(<CardTemplate />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
-
-// test('ProtoCardTemplate component fetches a title from json and renders it', () => {
-//   const { getByText } = render(<ProtoCardTemplate />);
-//   expect(getByText('Physics')).toBeInTheDocument();
-// })

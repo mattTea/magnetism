@@ -4,6 +4,7 @@ import { CardTemplate } from '../templates/CardTemplate.js'
 import '../App.css';
 
 export class SubTopicsPage extends React.Component {
+
   render() {
     return (
       <Container>
@@ -12,6 +13,5 @@ export class SubTopicsPage extends React.Component {
     );
   }
 };
-
 
 export default SubTopicsPage;

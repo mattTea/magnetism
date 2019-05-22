@@ -5,12 +5,6 @@ import { ResourcesPage } from '../pages/ResourcesPage.js';
 import { CardTemplate } from '../templates/CardTemplate';
 import 'jest-dom/extend-expect';
 
-// test('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<CardTemplate thisSection={"/topics/1/subtopics/1/resources" + "/"} nextSection="/content" dataSource="/api/topics/1/subtopics/1/resources"/>, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
-
 test('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<ResourcesPage />, div);
