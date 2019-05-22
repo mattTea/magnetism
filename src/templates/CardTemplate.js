@@ -5,7 +5,6 @@ import { Card, Image } from 'semantic-ui-react'
 
 export class CardTemplate extends React.Component{
 
-
   constructor(props) {
     super(props);
     this.state = {
