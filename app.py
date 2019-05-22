@@ -96,7 +96,13 @@ def record_feedback(topic_id, subtopic_id, resource_id):
         try:
             review_list = Review.query.filter_by(resource_id=resource_id).all()
 
-            create_object = {"average":4}
+            # print([e.get_score() for e in review_list])
+            total_score = sum([e.get_score() for e in review_list])
+            average = total_score / len(review_list)
+
+            create_object = {"average":average}
+            create_object['review_count'] = len(review_list)
+
             create_object['scores'] = [e.serialize() for e in review_list]
 
             response = jsonify(create_object)

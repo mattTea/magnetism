@@ -78,7 +78,7 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     score = db.Column(db.Integer)
-    resource_id = db.Column(db.Integer, db.ForeignKey('resources.id')) 
+    resource_id = db.Column(db.Integer, db.ForeignKey('resources.id'))
 
     def __init__(self, score, resource_id):
         self.score = score
@@ -93,3 +93,6 @@ class Review(db.Model):
             'score': self.score,
             'resource_id': self.resource_id,
         }
+
+    def get_score(self):
+        return self.score

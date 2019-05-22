@@ -146,7 +146,7 @@ def test_get_review_scores():
       data = json.loads(resp.data)
       assert data['scores'][0]["score"] == 87
 
-def test_get_review_average():
+def test_get_review_average_count():
     topic = Topic(
       name="Ruby",
       description="Some stuff about Ruby"
@@ -190,3 +190,4 @@ def test_get_review_average():
 
       data = json.loads(resp.data)
       assert data["average"] == 4
+      assert data["review_count"] == 2
