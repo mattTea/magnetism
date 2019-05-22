@@ -51,14 +51,13 @@ export class ResourceCardTemplate extends React.Component{
           I found this useful:
           <br/>
           <br/>
-          <RatingTemplate />
+          <RatingTemplate idd={ item.id }/>
         </Card.Content>
         </Card>
     })
   }
 
   render = () => {
-    console.log(this.cardList())
       return (
         <div>
           { this.state.list.length > 0 &&

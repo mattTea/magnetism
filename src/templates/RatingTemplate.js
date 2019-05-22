@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Input, Button } from 'semantic-ui-react';
 import '../App.css';
 
-export const RatingTemplate = () => {
+export const RatingTemplate = ({idd}) => {
 
   const [score, setScore] = useState("");
 
@@ -19,7 +19,7 @@ export const RatingTemplate = () => {
           <Button
             onClick={async () => {
               const review = { score }
-              const response = await fetch('/api' + window.location.pathname, {
+              const response = await fetch('/api' + window.location.pathname + "/" + idd +"/reviews", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json"
