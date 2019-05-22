@@ -5,11 +5,14 @@ import '../App.css';
 
 export class ResourcesPage extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
       <Container>
-  				<CardTemplate thisSection={this.props.location.pathname + "/"} nextSection="/content" dataSource={"/api" + this.props.location.pathname}/>
+  				<CardTemplate />
       </Container>
     );
   }
