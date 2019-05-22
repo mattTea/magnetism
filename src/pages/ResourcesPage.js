@@ -1,17 +1,19 @@
-import React from 'react';
-import { Container } from 'semantic-ui-react';
-import { CardTemplate } from '../templates/CardTemplate.js'
+import React, { useState } from 'react';
+import { Container, Form, Input, Button } from 'semantic-ui-react';
+import { ResourceCardTemplate } from '../templates/ResourceCardTemplate';
+import { RatingTemplate } from '../templates/RatingTemplate';
 import '../App.css';
 
-export class ResourcesPage extends React.Component {
+export const ResourcesPage = () => {
 
-  render() {
+  const [score, setScore] = useState("");
+
     return (
-      <Container>
-  				<CardTemplate />
-      </Container>
+      <div>
+        <ResourceCardTemplate />
+      </div>
+
     );
   }
-};
 
 export default ResourcesPage;
