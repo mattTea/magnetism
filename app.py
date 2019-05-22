@@ -19,7 +19,7 @@ db = SQLAlchemy(app)
 
 from api.models import *
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return redirect('/topics')
 
@@ -39,6 +39,13 @@ def subtopicsindex(topic_id):
 
 @app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources', methods=['GET'])
 def resourcesindex(topic_id, subtopic_id):
+    """
+    example endpoint
+    """
+    return render_template('index.html')
+
+@app.route('/topics/<topic_id>/subtopics/<subtopic_id>/resources/<resource_id>/reviews', methods=['GET'])
+def reviewsindex(topic_id, subtopic_id, resource_id):
     """
     example endpoint
     """
