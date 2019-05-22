@@ -24,7 +24,7 @@ export class CardTemplate extends React.Component{
   }
 
   getList = () => {
-    fetch(this.props.dataSource)
+    fetch('/api' + window.location.pathname )
     .then((response) => response.json())
     .then(data => this.setState( {list:data} ));
   }
@@ -41,9 +41,10 @@ export class CardTemplate extends React.Component{
 
   render(){
     const itemListArray = this.state.list;
-
     const itemList = itemListArray.map((item) => {
-
+    const thisURL = window.location.pathname
+    const appendURL = thisURL.includes('subtopic')? '/' + item.id + '/resources' : '/' + item.id + '/subtopics'
+    const finalURL = thisURL + appendURL
       return <Card key={ item.id } color='purple' >
       <Image src={ this.usedImage(item.name) } wrapped ui={false} />
       <Card.Content>
@@ -55,7 +56,7 @@ export class CardTemplate extends React.Component{
     		</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a href={ this.props.thisSection + item.id + this.props.nextSection }>
+          <a href={ finalURL }>
           Learn { item.name }!
           </a>
       </Card.Content>
