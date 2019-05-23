@@ -26,7 +26,7 @@ def test_subtopics_route():
     name="butterfly",
     description="Some stuff about butterfly",
     topic_id=topic.id,
-    order=1
+    display_order=1
   )
   db.session.add(subtopic)
   db.session.commit()
@@ -48,7 +48,7 @@ def test_resources_route():
     name="Arrays",
     description="Some stuff about Arrays",
     topic_id=topic.id,
-    order=1
+    display_order=1
   )
   db.session.add(subtopic)
   db.session.commit()
@@ -80,7 +80,7 @@ def test_post_review():
       name="Arrays",
       description="Some stuff about Arrays",
       topic_id=topic.id,
-      order=1
+      display_order=1
     )
     db.session.add(subtopic)
     db.session.commit()
@@ -118,7 +118,7 @@ def test_get_review_scores():
       name="Arrays",
       description="Some stuff about Arrays",
       topic_id=topic.id,
-      order=1
+      display_order=1
     )
     db.session.add(subtopic)
     db.session.commit()
@@ -158,7 +158,7 @@ def test_get_review_average_count():
       name="Arrays",
       description="Some stuff about Arrays",
       topic_id=topic.id,
-      order=1
+      display_order=1
     )
     db.session.add(subtopic)
     db.session.commit()

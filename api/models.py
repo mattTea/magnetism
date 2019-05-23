@@ -29,13 +29,13 @@ class SubTopic(db.Model):
     name = db.Column(db.String())
     description = db.Column(db.String())
     topic_id = db.Column(db.Integer, db.ForeignKey('topics.id'))
-    order = db.Column(db.Integer)
+    display_order = db.Column(db.Integer)
 
-    def __init__(self, name, description, topic_id, order):
+    def __init__(self, name, description, topic_id, display_order):
         self.name = name
         self.description = description
         self.topic_id = topic_id
-        self.order = order
+        self.display_order = display_order
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -46,7 +46,7 @@ class SubTopic(db.Model):
             'name': self.name,
             'description': self.description,
             'topic_id': self.topic_id,
-            'order': self.order
+            'display_order': self.display_order
         }
 
 class Resource(db.Model):
