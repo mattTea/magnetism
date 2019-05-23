@@ -56,6 +56,7 @@ def test_resources_route():
   resource = Resource(
     name="Array theory",
     content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
+    url="https://url.com",
     subtopic_id = subtopic.id,
   )
   db.session.add(resource)
@@ -88,6 +89,7 @@ def test_post_review():
     resource = Resource(
       name="Array theory",
       content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
+      url="https://url.com",
       subtopic_id = subtopic.id,
     )
     db.session.add(resource)
@@ -126,6 +128,7 @@ def test_get_review_scores():
     resource = Resource(
       name="Array theory",
       content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
+      url="https://url.com",
       subtopic_id = subtopic.id,
     )
     db.session.add(resource)
@@ -166,6 +169,7 @@ def test_get_review_average_count():
     resource = Resource(
       name="Array theory",
       content="Arrays start counting at zero. Trying to access an empty array may throw an out of bounds error",
+      url="https://url.com",
       subtopic_id = subtopic.id,
     )
     db.session.add(resource)

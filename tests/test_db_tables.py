@@ -58,6 +58,7 @@ def test_resources_db():
     longDivision=Resource(
         name="Long Division",
         content="Don't forget to carry the 1",
+        url="https://url.com",
         subtopic_id = sums.id,
     )
     
@@ -90,6 +91,7 @@ def test_reviews_db():
     longDivision=Resource(
         name="Long Division",
         content="Don't forget to carry the 1",
+        url="https://url.com",
         subtopic_id = sums.id,
     )
     

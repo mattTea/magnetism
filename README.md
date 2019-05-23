@@ -13,13 +13,13 @@ For our final project, Team Magnetism have built a learning application. The ide
 
 ### Functionality
 
-1. The ability to pick a topic (MVP - work in progress)
+1. The ability to pick a topic
 
-2. The ability to see sub-topics/learning paths/knowledge nuggets for that topic (MVP - work in progress)
+2. The ability to see sub-topics/learning paths/knowledge nuggets for that topic
 
-3. The ability to see learning resources for sub-topics/learning paths/knowledge nuggets (MVP - work in progress)
+3. The ability to see learning resources for sub-topics
 
-4. The ability to give a rating to the resource (MVP - work in progress)
+4. The ability to give a rating to the resource, and see all previous reviews
 
 ------
 
