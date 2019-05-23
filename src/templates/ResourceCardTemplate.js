@@ -22,39 +22,28 @@ export class ResourceCardTemplate extends React.Component{
     .then(data => this.setState( {list:data} ));
   }
 
-  cardGenerator = (id, name, content) => {
-    return <Card key={ id } color='purple' >
+  cardGenerator = (item) => {
+    return <Card key={ item.id } color='purple' >
     <Card.Content>
       <Card.Header>
-        { name }
+        { item.name }
       </Card.Header>
       <Card.Description>
-        { content }
+        { item.content }
       </Card.Description>
       </Card.Content>
+      <Card.Content extra>
+      <br/>
+      How confident are you that you know this?
+      <br/>
+      <br/>
+      <RatingTemplate id={ item.id }/>
+    </Card.Content>
     </Card>
   }
 
   cardList = () => {
-    return this.state.list.map((item) => {
-        return <Card key={ item.id } color='purple' >
-        <Card.Content>
-          <Card.Header>
-            { item.name }
-          </Card.Header>
-          <Card.Description>
-            { item.content }
-          </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-          <br/>
-          How confident are you that you know this?
-          <br/>
-          <br/>
-          <RatingTemplate idd={ item.id }/>
-        </Card.Content>
-        </Card>
-    })
+    return this.state.list.map((item) => { this.cardGenerator({item}) })
   }
 
   render = () => {
