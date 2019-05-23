@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 import TopicsPage from './pages/TopicsPage.js'
 import SubTopicsPage from './pages/SubTopicsPage.js'
 import ResourcesPage from './pages/ResourcesPage.js'
-import ReviewsPage from './pages/ReviewsPage.js'
 import './App.css';
 
 ReactDOM.render(
@@ -13,7 +12,6 @@ ReactDOM.render(
         <Route exact path="/topics" component={TopicsPage} />
         <Route exact path="/topics/:topic_id/subtopics" component={SubTopicsPage} />
         <Route exact path="/topics/:topic_id/subtopics/:subtopic_id/resources" component={ResourcesPage} />
-        <Route exact path="/topics/:topic_id/subtopics/:subtopic_id/resources/:resource_id/reviews" component={ReviewsPage} />
 
   </BrowserRouter>,
   document.getElementById('app')

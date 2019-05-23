@@ -48,7 +48,7 @@ export class ResourceCardTemplate extends React.Component{
           </Card.Content>
           <Card.Content extra>
           <br/>
-          I found this useful:
+          How confident are you that you know this?
           <br/>
           <br/>
           <RatingTemplate idd={ item.id }/>
