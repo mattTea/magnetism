@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import { Container, Form, Input, Button } from 'semantic-ui-react';
+import { Container, Form, Input, Button, Rating } from 'semantic-ui-react';
 import '../App.css';
 
 export const RatingTemplate = ({idd}) => {
 
-  const [score, setScore] = useState("");
+  const [rating, setRating] = useState(1);
+  const [score, setScore] = useState(1);
 
     return (
       <Form>
         <Form.Field>
-          <Input
-            placeholder="enter your score"
-            value={score}
-            onChange={e => setScore(e.target.value)}
+          <Rating
+            icon="star"
+            size="huge"
+            rating={score}
+            maxRating={10}
+            onRate={(_, data) => {
+              setScore(data.rating);
+            }}
           />
         </Form.Field>
         <Form.Field>
