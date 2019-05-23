@@ -32,7 +32,7 @@ def test_get_subtopics():
     name="butterfly",
     description="Some stuff about butterfly",
     topic_id=topic.id,
-    order=1
+    display_order=1
   )
   db.session.add(subtopic)
   db.session.commit()
@@ -59,7 +59,7 @@ def test_get_resources_for_subtopic():
     name="notation",
     description="Some stuff about notation",
     topic_id=topic.id,
-    order=1
+    display_order=1
   )
   db.session.add(subtopic)
   db.session.commit()
@@ -95,7 +95,7 @@ def test_reviews_for_resource():
       name="Rugby",
       description="Some stuff about Rugby",
       topic_id=topic.id,
-      order=1
+      display_order=1
     )
     db.session.add(subtopic)
     db.session.commit()

@@ -26,7 +26,7 @@ def test_subtopics_db():
         name="Sums",
         description="In mathematics, sums is the addition of a sequence of any kind of numbers, called addends or summands.",
         topic_id = mathematics.id,
-        order = 1
+        display_order = 1
     )
 
     db.session.add(sums)
@@ -49,7 +49,7 @@ def test_resources_db():
         name="Sums",
         description="In mathematics, sums is the addition of a sequence of any kind of numbers, called addends or summands.",
         topic_id = mathematics.id,
-        order = 1
+        display_order = 1
     )
 
     db.session.add(sums)
@@ -61,7 +61,7 @@ def test_resources_db():
         url="https://url.com",
         subtopic_id = sums.id,
     )
-    
+
     db.session.add(longDivision)
     db.session.commit()
 
@@ -82,7 +82,7 @@ def test_reviews_db():
         name="Sums",
         description="In mathematics, sums is the addition of a sequence of any kind of numbers, called addends or summands.",
         topic_id = mathematics.id,
-        order = 1
+        display_order = 1
     )
 
     db.session.add(sums)
@@ -94,7 +94,7 @@ def test_reviews_db():
         url="https://url.com",
         subtopic_id = sums.id,
     )
-    
+
     db.session.add(longDivision)
     db.session.commit()
 

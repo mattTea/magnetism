@@ -24,7 +24,7 @@ def teardown_module():
 #   subtopic = SubTopic(
 #     name="butterfly",
 #     topic_id=topic.id,
-#     order=1
+#     display_order=1
 #   )
 #   db.session.add(subtopic)
 #   db.session.commit()
