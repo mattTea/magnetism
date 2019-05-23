@@ -67,6 +67,7 @@ def test_get_resources_for_subtopic():
   resource = Resource(
     name="Notation theory",
     content="la la la la la la. Do ray me fah so lah te da",
+    url="https://url.com",
     subtopic_id = subtopic.id,
   )
   db.session.add(resource)
@@ -102,6 +103,7 @@ def test_reviews_for_resource():
     resource = Resource(
       name="How to make a tackle",
       content="take out the legs!",
+      url="https://url.com",
       subtopic_id = subtopic.id,
     )
     db.session.add(resource)
