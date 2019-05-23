@@ -55,11 +55,13 @@ class Resource(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
     content = db.Column(db.String())
+    url = db.Column(db.String())
     subtopic_id = db.Column(db.Integer, db.ForeignKey('subtopics.id'))
 
-    def __init__(self, name, content, subtopic_id):
+    def __init__(self, name, content, url, subtopic_id):
         self.name = name
         self.content = content
+        self.url = url
         self.subtopic_id = subtopic_id
 
     def __repr__(self):
@@ -70,6 +72,7 @@ class Resource(db.Model):
             'id': self.id,
             'name': self.name,
             'content': self.content,
+            'url': self.url,
             'subtopic_id': self.subtopic_id,
         }
 
