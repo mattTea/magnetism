@@ -66,7 +66,11 @@ test('fetches data from server when server returns a successful response', done 
 test('generates card', () => {
   const wrapper = shallow(<ResourceCardTemplate />)
   const instance = wrapper.instance();
-  expect(instance.cardGenerator({id:1, name:'Google', content:'Your best friend!'})).toEqual(wantedCard())
+  expect(instance.cardGenerator({
+    id:1,
+    name:'Google',
+    content:'Your best friend!'
+  })).toEqual(wantedCard())
 })
 
 test('generates card list', () => {
