@@ -8,6 +8,7 @@ import ResourcesPage from './pages/ResourcesPage.js'
 import './App.css';
 
 ReactDOM.render(
+  
   <BrowserRouter>
         <Route exact path="/topics" component={TopicsPage} />
         <Route exact path="/topics/:topic_id/subtopics" component={SubTopicsPage} />

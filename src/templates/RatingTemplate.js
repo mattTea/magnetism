@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Container, Form, Input, Button, Rating } from 'semantic-ui-react';
+import { Form, Button, Rating } from 'semantic-ui-react';
 import '../App.css';
 
 export const RatingTemplate = ({idd}) => {
 
-  const [rating, setRating] = useState(1);
   const [score, setScore] = useState(1);
 
     return (
@@ -22,6 +21,7 @@ export const RatingTemplate = ({idd}) => {
         </Form.Field>
         <Form.Field>
           <Button
+            href="javascript:history.back()"
             onClick={async () => {
               const review = { score }
               const response = await fetch('/api' + window.location.pathname + "/" + idd +"/reviews", {
