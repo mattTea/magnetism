@@ -17,5 +17,4 @@ export class TopicsNavBar extends React.Component {
       </Menu>
     )
   }
-  
 }
