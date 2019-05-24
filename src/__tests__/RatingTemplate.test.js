@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'jest-dom/extend-expect';
-import { RatingTemplate } from '../templates/RatingTemplate2';
+import { RatingTemplate } from '../templates/RatingTemplate';
 import { shallow, mount, configure, render } from 'enzyme';
 // import { fireEvent, getByTestId, render} from "react-testing-library";
 import Adapter from 'enzyme-adapter-react-16';
