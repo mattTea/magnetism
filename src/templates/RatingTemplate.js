@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Rating } from 'semantic-ui-react';
 import '../App.css';
 
-export const RatingTemplate = ({idd}) => {
+export const RatingTemplate = ({id}) => {
 
   const [score, setScore] = useState(1);
 
@@ -24,7 +24,7 @@ export const RatingTemplate = ({idd}) => {
             href="javascript:history.back()"
             onClick={async () => {
               const review = { score }
-              const response = await fetch('/api' + window.location.pathname + "/" + idd +"/reviews", {
+              const response = await fetch('/api' + window.location.pathname + "/" + id +"/reviews", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json"
