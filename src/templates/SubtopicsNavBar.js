@@ -10,7 +10,7 @@ export class SubtopicsNavBar extends React.Component {
 
   render() {
     const { activeItem } = this.state
-    
+
     return(
       <Menu>
         <Menu.Item
@@ -22,5 +22,4 @@ export class SubtopicsNavBar extends React.Component {
       </Menu>
     )
   }
-  
 }
