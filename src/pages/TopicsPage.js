@@ -1,15 +1,20 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
-import { CardTemplate } from '../templates/CardTemplate.js'
+import { CardTemplate } from '../templates/CardTemplate.js';
+import { TopicsNavBar } from '../templates/TopicsNavBar';
 import '../App.css';
 
 export class TopicsPage extends React.Component {
 
   render() {
     return (
-      <Container>
-  				<CardTemplate />
-      </Container>
+      <div>
+        <TopicsNavBar />
+        <Container>
+          <CardTemplate />
+        </Container>
+      </div>
+      
     );
   }
 };
