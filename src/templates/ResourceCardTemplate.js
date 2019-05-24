@@ -1,19 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { RatingTemplate } from '../templates/RatingTemplate';
 import '../App.css';
-import { Form, Input, Rating, Button, Card } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 export class ResourceCardTemplate extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
       list: [],
+      ratings: {}
     };
   }
 
   componentDidMount(){
     this.getList();
+
   }
 
   getList = () => {
